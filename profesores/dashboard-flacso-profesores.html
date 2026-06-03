@@ -1171,6 +1171,42 @@ a.chip-reading-link:hover {
   background: var(--hongo);
   color: var(--muted);
 }
+/* Prompt colapsable por paso */
+.step-prompt-toggle {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 0.5px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s;
+}
+.step-prompt-toggle:hover { border-color: var(--negro); color: var(--negro); }
+.step-prompt-toggle.open { border-color: var(--agua); color: var(--agua); }
+.step-prompt-body {
+  display: none;
+  margin-top: 10px;
+  background: var(--cielo);
+  border-radius: 6px;
+  border-left: 2px solid var(--agua);
+  padding: 14px 16px;
+}
+.step-prompt-body.visible { display: block; }
+.step-prompt-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  color: var(--negro);
+  margin-bottom: 10px;
+}
 
 /* Prompts clave */
 .guia-prompts { display: flex; flex-direction: column; gap: 12px; }
@@ -1452,65 +1488,55 @@ footer {
       <div class="guia-section guia-section--2">
         <span class="guia-section-tag">Pasos</span>
         <div class="guia-steps">
+
           <div class="guia-step">
             <div class="guia-step-num">01</div>
             <div class="guia-step-body">
-              <div class="guia-step-title">Organiza el contenido de tu curso</div>
-              <p class="guia-step-desc">Reúne el programa de tu materia: semanas, temas, lecturas obligatorias, actividades y recursos. No hace falta que esté perfecto — la IA te ayuda a completar los vacíos. Un Google Doc con la estructura general es suficiente para empezar.</p>
+              <div class="guia-step-title">Junta el contenido de tu curso</div>
+              <p class="guia-step-desc">Reúne en un solo documento todo lo que tienes: temas por semana, lecturas, actividades y recursos. No importa si está incompleto o desordenado — la IA te ayuda a completar los vacíos. Un Google Doc con lo que ya tienes es suficiente para empezar.</p>
               <div class="guia-step-chips"><span class="guia-step-chip">Google Docs</span></div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">Tengo el material de mi materia "[nombre del curso]". Puede estar disperso o incompleto. Ayúdame a organizarlo en semanas con:
+- Número de semana
+- Tema o título central
+- Lecturas o recursos de esa semana
+- Actividad principal
+
+Aquí está el contenido: [pega lo que tengas]</div>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
             </div>
           </div>
+
           <div class="guia-step">
             <div class="guia-step-num">02</div>
             <div class="guia-step-body">
-              <div class="guia-step-title">Sube el programa a NotebookLM</div>
-              <p class="guia-step-desc">Carga tu documento en NotebookLM y pídele que genere un resumen estructurado semana a semana, con los materiales clave de cada una. Esto produce la base de datos de contenido que usarás en el siguiente paso.</p>
+              <div class="guia-step-title">Carga el programa en NotebookLM</div>
+              <p class="guia-step-desc">NotebookLM es un asistente de Google que lee tus documentos y responde preguntas sobre ellos — sin inventar nada. Carga tu programa allí y pídele que genere un resumen organizado semana a semana. Ese texto es la base que usarás en el paso siguiente.</p>
               <div class="guia-step-chips"><span class="guia-step-chip">NotebookLM</span></div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">Genera un resumen semana a semana del programa del curso que adjunto. Para cada semana incluye:
+- Número de semana y tema central
+- Lecturas y recursos clave
+- Actividades o tareas
+
+Usa encabezados separados por semana. Sé conciso pero completo.</div>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
             </div>
           </div>
+
           <div class="guia-step">
             <div class="guia-step-num">03</div>
             <div class="guia-step-body">
-              <div class="guia-step-title">Convierte el contenido en <abbr title="JSON: JavaScript Object Notation — formato estándar para estructurar datos que la IA y los navegadores leen directamente">JSON</abbr> con Gemini</div>
-              <p class="guia-step-desc">Pega el resumen en Gemini y usa el prompt de estructuración (ver abajo) para obtener un JSON con el listado de semanas en el mismo formato que usa este dashboard. Revisa semana por semana que los datos estén completos.</p>
+              <div class="guia-step-title">Pídele a Gemini que estructure los datos</div>
+              <p class="guia-step-desc">Pega el resumen en Gemini junto con el prompt de abajo. Gemini transforma el texto en una lista ordenada en el formato exacto que necesita el dashboard. Cuando termine, revisa que todas las semanas estén incluidas.</p>
               <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
-            </div>
-          </div>
-          <div class="guia-step">
-            <div class="guia-step-num">04</div>
-            <div class="guia-step-body">
-              <div class="guia-step-title">Genera el <abbr title="HTML: HyperText Markup Language — el lenguaje de páginas web; un solo archivo .html es todo lo que necesitas para este dashboard">HTML</abbr> del dashboard</div>
-              <p class="guia-step-desc">En Gemini, pasa este archivo como contexto y pídele que genere un dashboard nuevo con tu JSON de contenido. Indica el nombre de tu curso, la institución y la cantidad de semanas. El modelo produce el archivo HTML completo listo para abrir en el navegador.</p>
-              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
-            </div>
-          </div>
-          <div class="guia-step">
-            <div class="guia-step-num">05</div>
-            <div class="guia-step-body">
-              <div class="guia-step-title">Personaliza colores, logo y tipografía</div>
-              <p class="guia-step-desc">Edita las variables <abbr title="CSS: Cascading Style Sheets — el bloque de estilos que controla colores, tipografía y espaciado de toda la página">CSS</abbr> al principio del archivo — todo el sistema visual está ahí. Cambia <code style="font-family:'DM Mono',monospace;font-size:13px">--agua</code> por el color institucional de tu cátedra, reemplaza el logo y ajusta el nombre en el encabezado. No necesitas tocar nada más.</p>
-              <div class="guia-step-chips"><span class="guia-step-chip">Editor de texto</span><span class="guia-step-chip">Gemini</span></div>
-            </div>
-          </div>
-          <div class="guia-step">
-            <div class="guia-step-num">06</div>
-            <div class="guia-step-body">
-              <div class="guia-step-title">Publica y comparte</div>
-              <p class="guia-step-desc">Sube el archivo HTML a Google Drive y usa "Publicar en la web" para obtener un link directo que abre el dashboard en el navegador, sin necesitar servidor ni cuenta de GitHub. Comparte ese link con tus estudiantes como cualquier otro recurso del curso.</p>
-              <div class="guia-step-chips"><span class="guia-step-chip">Google Drive</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prompts clave -->
-      <div class="guia-section guia-section--3">
-        <span class="guia-section-tag">Prompts clave</span>
-        <div class="guia-prompts">
-          <div class="guia-prompt-block">
-            <div class="guia-prompt-label">Paso 3 · Estructuración</div>
-            <div class="guia-prompt-title">Convertir el programa en datos JSON</div>
-            <div class="guia-prompt-text">Tengo el programa de mi materia [nombre] organizado en [N] semanas. A continuación te paso el contenido.
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">Tengo el programa de mi materia [nombre] organizado en [N] semanas. A continuación te paso el contenido.
 
 Tu tarea es transformarlo en un array JSON con esta estructura exacta por semana:
 { num, titulo, estado, objetivo, items: [ { tipo, titulo, autor, desc, tags, estado } ] }
@@ -1521,12 +1547,20 @@ Tu tarea es transformarlo en un array JSON con esta estructura exacta por semana
 - autor incluye la fuente o dónde conseguir el material
 
 Devuelve solo el JSON, sin texto adicional. Aquí está el programa: [pega el contenido]</div>
-            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
+            </div>
           </div>
-          <div class="guia-prompt-block">
-            <div class="guia-prompt-label">Paso 4 · Generación</div>
-            <div class="guia-prompt-title">Generar el HTML del dashboard</div>
-            <div class="guia-prompt-text">Tienes como referencia el archivo dashboard-flacso-profesores.html que te paso como contexto.
+
+          <div class="guia-step">
+            <div class="guia-step-num">04</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Pídele a Gemini que genere tu dashboard</div>
+              <p class="guia-step-desc">Adjunta este mismo archivo en Gemini como contexto, pega el prompt de abajo y los datos del paso anterior. Gemini genera un archivo nuevo con todo tu curso incluido. Descárgalo y ábrelo haciendo doble clic — ya es tu dashboard funcionando en el navegador.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt de generación</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">Tienes como referencia el archivo dashboard-flacso-profesores.html que te paso como contexto.
 
 Genera un dashboard nuevo para el curso "[nombre del curso]" en [institución], de [N] semanas.
 
@@ -1538,21 +1572,59 @@ Mantén exactamente la misma estructura de HTML, CSS y JavaScript del archivo de
 - El color principal (--agua) por [código hex de tu color]
 
 Devuelve el archivo HTML completo.</div>
-            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
-          </div>
-          <div class="guia-prompt-block">
-            <div class="guia-prompt-label">Paso 4 bis · Iteración</div>
-            <div class="guia-prompt-title">Agregar o corregir contenido después de generar</div>
-            <div class="guia-prompt-text">En el dashboard que acabas de generar, necesito hacer los siguientes cambios en el array de semanas:
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt si necesitas ajustar algo después</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">En el dashboard que acabas de generar, necesito hacer los siguientes cambios:
 
 [describe qué semana y qué cambiar, por ejemplo:]
 - Semana 3: agrega una actividad llamada "X" con la descripción "Y"
 - Semana 5: cambia el estado de la lectura "Z" de pendiente a listo
 - Semana 7: corrige el autor del video
 
-Devuelve solo el bloque JavaScript modificado (el array completo), no el HTML entero.</div>
-            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+Devuelve solo el bloque de datos modificado (el array completo), no el archivo entero.</div>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
+            </div>
           </div>
+
+          <div class="guia-step">
+            <div class="guia-step-num">05</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Ajusta los colores y el nombre</div>
+              <p class="guia-step-desc">Vuelve a Gemini con el archivo generado. El prompt de abajo le indica exactamente qué cambiar: el nombre de tu curso, la institución y el color principal. No necesitas tocar el código — Gemini hace los cambios y te devuelve el archivo listo.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">En el archivo HTML del dashboard que te adjunto, necesito estos cambios:
+
+1. El título del encabezado debe decir: [nombre de tu curso]
+2. El subtítulo: [tu institución] · [año]
+3. El color principal — búscalo donde dice --agua en el CSS — cámbialo a: [tu código de color, ej. #2E86C1]
+
+No cambies nada más. Devuelve el archivo HTML completo con los cambios aplicados.</div>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="guia-step">
+            <div class="guia-step-num">06</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Publica y comparte</div>
+              <p class="guia-step-desc">Sube el archivo a Google Drive. Ábrelo, haz clic en el menú de los tres puntos y elige <strong>Publicar en la web</strong>. Copia el link que aparece y compártelo como cualquier otro recurso del curso — no necesitas servidor ni conocimientos técnicos.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Google Drive</span></div>
+              <button class="step-prompt-toggle" onclick="toggleStepPrompt(this)"><span class="spt-arrow">▸</span> Ver prompt si algo no funciona</button>
+              <div class="step-prompt-body">
+                <div class="step-prompt-text">Publiqué mi dashboard en Google Drive pero [describe el problema, por ejemplo: "el archivo abre pero no se ven los estilos" / "los acentos aparecen como símbolos raros" / "el link no abre el dashboard"].
+
+¿Qué puede estar causando esto y cómo lo soluciono? El archivo es un HTML de una sola página, sin servidor ni base de datos.</div>
+                <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -2408,7 +2480,8 @@ function renderVision() {
 }
 
 function copyGuiaPrompt(btn) {
-  const text = btn.closest('.guia-prompt-block').querySelector('.guia-prompt-text').textContent.trim();
+  const container = btn.closest('.step-prompt-body') || btn.closest('.guia-prompt-block');
+  const text = container.querySelector('.step-prompt-text, .guia-prompt-text').textContent.trim();
   navigator.clipboard.writeText(text).then(() => {
     btn.innerHTML = '<span class="copy-icon">✓</span> Copiado';
     btn.classList.add('copied');
@@ -2417,6 +2490,14 @@ function copyGuiaPrompt(btn) {
       btn.classList.remove('copied');
     }, 2000);
   });
+}
+
+function toggleStepPrompt(btn) {
+  const body = btn.nextElementSibling;
+  const open = !body.classList.contains('visible');
+  body.classList.toggle('visible', open);
+  btn.classList.toggle('open', open);
+  btn.querySelector('.spt-arrow').textContent = open ? '▾' : '▸';
 }
 
 renderSemanas();
