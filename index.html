@@ -1683,39 +1683,45 @@ const data = {
     {
       num: "04",
       colorClass: "sem-4",
-      titulo: "Riesgos, Sesgos y Privacidad",
-      resumen: "Cierre crítico del curso: qué puede salir mal cuando una organización educativa adopta IA y cómo anticiparlo. Se trabajan cuatro riesgos clave — sesgo algorítmico, fuga de datos, dependencia tecnológica y opacidad — con el marco de Weapons of Math Destruction como lente analítico. Se analiza el marco normativo de Ecuador y el AI Act europeo, y se abre la pregunta del Sur Global: ¿quién define qué cuenta como riesgo y para quién?",
+      titulo: "Agentes de IA, Workspace Studio e IA Sostenible",
+      resumen: "Sesión en dos bloques. Primero: qué son realmente los agentes de IA — no actores autónomos sino bucles de orquestación — y cómo Google Workspace Studio permite crear flujos automatizados en Gmail, Drive, Docs y Sheets con lenguaje natural, sin código ni API. Segundo: la huella ambiental de la IA — carbono, agua, energía y residuos electrónicos — con herramientas de medición (Code Carbon), análisis de ciclo de vida, paradoja de Jevons y un caso de estudio sobre IA para tráfico urbano. Cierre con la pregunta del Sur Global: ¿quién paga el costo ambiental de la IA?",
       temas: [
-        "Sesgo algorítmico: el modelo aprende desigualdad histórica como norma y la aplica a escala sin fricción ni revisión",
-        "Weapons of Math Destruction (ADM, armas de destrucción matemática): tres rasgos que convierten un modelo en un riesgo — opacidad, escala y daño",
-        "Privacidad y fuga de datos: cuatro preguntas antes de usar cualquier herramienta — ¿qué dato entrego?, ¿dónde se aloja?, ¿se usa para reentrenar el modelo?, ¿quién puede acceder?",
-        "Dependencia tecnológica: costos que suben sin alternativa real, pérdida de saberes internos, soberanía tecnológica comprometida",
-        "Opacidad: la caja negra — decisiones que nadie puede explicar ni apelar; imposible auditar o rendir cuentas",
-        "Marco normativo: Ecuador y AI Act (Ley de Inteligencia Artificial de la Unión Europea)",
-        "Lente crítico Sur Global: ¿riesgo para quién?, extractivismo de datos, infraestructura en el Norte con impacto en el Sur",
-        "Actividad: matriz de análisis de riesgos organizacionales — herramienta × tipo de dato × riesgo × acción de mitigación"
+        "Agentes de IA como bucles de orquestación: la trampa del antropomorfismo — no 'deciden', encadenan llamadas a modelos probabilísticos (LangGraph, grafos de estados)",
+        "Términos más precisos que 'agente': orquestación de modelos, pipelines asistidos, automatización aumentada, delegación de tareas",
+        "Google Workspace Studio: diseñar agentes en lenguaje natural integrados en Gmail, Drive, Docs, Sheets y Calendar — sin código ni claves API",
+        "Casos de uso: síntesis de papers desde Drive, clasificación de solicitudes en Forms, resúmenes de correo, gestión de reuniones, dashboards automáticos en Sheets",
+        "Gobernanza al implementar agentes: ¿qué datos sensibles procesa el sistema? ¿Hay revisión humana en tareas de alto riesgo?",
+        "IA sostenible: tres dimensiones — eficiencia energética, huella hídrica y residuos electrónicos",
+        "Análisis de ciclo de vida (ACV): la huella empieza en la mina (extracción de materias primas) y termina en el vertedero",
+        "Contabilidad de carbono — Alcance 1 (emisiones directas), Alcance 2 (electricidad comprada), Alcance 3 (cadena de valor upstream y downstream)",
+        "Paradoja de Jevons: mayor eficiencia → mayor demanda total; la eficiencia sola no reduce el consumo",
+        "Impacto por tipo de tarea: generar una imagen emite ~600 veces más CO₂ que clasificar texto (Luccioni et al., FAccT 2024)",
+        "Herramientas de medición: Code Carbon, ML CO₂ Impact, Cloud Carbon, Green Algorithms, EcoLogist",
+        "Cuatro pasos para reducir huella: estrategia sostenible, medir y reportar, optimizar sistemas, replantear si hace falta IA",
+        "Sostenibilidad con justicia: lente Sur Global — quién paga el costo ambiental y quién decide"
       ],
       actividades: [
-        "Mapear herramientas de IA en uso y qué datos procesa cada una",
-        "Auditoría básica de privacidad: ¿a dónde van tus datos?",
-        "Clasificar riesgos de la organización propia con la matriz de los cuatro riesgos",
-        "Lectura comentada: Weapons of Math Destruction (caps. seleccionados)",
-        "Debate: ¿tu institución debería tener política de uso de IA y cómo debería verse?"
+        "Demo en Google Workspace Studio: crear un agente en lenguaje natural para automatizar una tarea propia (correo, Drive o Calendar)",
+        "Actividad grupal: ordenar sectores económicos de mayor a menor emisiones de CO₂ (incluye TIC, aviación, agricultura, industria)",
+        "Actividad grupal: clasificar escenarios en Alcance 1, 2 o 3 de carbono (generador diésel, electricidad comprada, uso de nube, compra de GPU)",
+        "Actividad grupal: ordenar tareas de IA por huella de carbono — generación de imágenes, generación de texto, clasificación de imágenes, clasificación de texto",
+        "Caso de estudio final: IA para tráfico urbano — semáforos inteligentes vs autos autónomos vs asistente LLM: ¿cuál es más sostenible y por qué?"
       ],
       ideas: [
-        { text: "La IA no es neutral: hereda el mundo que la entrena. Decisiones que automatizamos sin auditar, datos que cedemos sin saber dónde quedan, personas afectadas que no participaron del diseño.", src: "Sesión 10" },
-        { text: "Un modelo se convierte en arma de destrucción matemática cuando combina opacidad (criterios ocultos), escala (millones de personas) y daño (refuerza desventajas con predicciones autocumplidas).", src: "O'Neil, 2016" },
-        { text: "¿Riesgo para quién? Las comunidades afectadas rara vez participan del diseño. Datos y cómputo se extraen del Sur, el valor se captura en el Norte.", src: "Sesión 10 — lente Sur Global" },
-        { text: "Ningún dato es neutral, ninguna herramienta es inocente. La gestión de riesgos no es desconfianza tecnológica: es la condición para usar la IA con responsabilidad y justicia.", src: "Sesión 10" }
+        { text: "La palabra 'agente' sugiere autonomía e intencionalidad que estos sistemas no poseen. Es un bucle de orquestación: un programa que encadena llamadas a modelos probabilísticos. No delibera; es un flujo de control automatizado.", src: "Sesión 4" },
+        { text: "Paradoja de Jevons: cuando una tecnología se vuelve más eficiente y barata, su uso total tiende a dispararse, no a reducirse. La eficiencia, por sí sola, no garantiza menos consumo.", src: "Sesión 4" },
+        { text: "Generar una imagen emite ~600 veces más CO₂ que clasificar texto. La escala logarítmica revela cuánto importan las decisiones de diseño: modelo, hardware y red eléctrica cambian el impacto en órdenes de magnitud.", src: "Luccioni et al., FAccT 2024" },
+        { text: "6 de 9 límites planetarios ya cruzados. La expansión acelerada de la IA demanda energía, agua y materiales, presionando estos límites. La huella no es la 'nube': empieza en la mina y termina en el vertedero.", src: "Richardson et al., Science Advances 2023" },
+        { text: "Sostenibilidad con justicia: las zonas tropicales y el Sur Global concentran el mayor riesgo climático, pero son quienes menos han contribuido a las emisiones. ¿Quién paga el costo ambiental de la IA y quién decide?", src: "Sesión 4" }
       ],
       preguntas: [
-        "¿Qué datos de tu institución cedes cuando usas herramientas de IA externas? ¿Dónde se alojan y bajo qué jurisdicción?",
-        "¿Cuáles de los cuatro riesgos (sesgo, fuga, dependencia, opacidad) son más urgentes en tu organización?",
-        "¿Tu institución tiene política de uso de IA? Si no, ¿cómo debería verse?",
-        "¿Quién define qué cuenta como riesgo en el contexto latinoamericano? ¿Qué perspectivas están ausentes en los marcos normativos actuales?"
+        "¿Qué tareas repetitivas de tu trabajo académico o docente podrías automatizar con un agente de Workspace Studio? ¿Cuáles no deberías delegar y por qué?",
+        "¿Sabías que generar una imagen con IA emite ~600 veces más CO₂ que clasificar texto? ¿Cómo cambia esto tus decisiones de uso cotidiano?",
+        "¿Quién paga el costo ambiental de la IA en el Sur Global? ¿Cómo se distribuye esa carga entre quienes diseñan y quienes la sufren?",
+        "¿Qué medirías para conocer la huella de carbono de los modelos que usas en tu curso? ¿Qué cambiarías si pudieras medirlo?"
       ],
-      herramientas: ["Análisis crítico"],
-      lecturas: ["O'Neil (2016)", "Birhane (2021)", "Ruha Benjamin (2019)", "Acemoglu (2024)", "Miceli & Posada (2022)"]
+      herramientas: ["Google Workspace Studio", "Code Carbon"],
+      lecturas: ["Luccioni et al. (FAccT 2024)", "Richardson et al. (2023)", "Strubell et al. (AAAI 2020)", "Li et al. (2023)", "Wang et al., Nature (2024)"]
     }
   ],
 
