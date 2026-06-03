@@ -1428,7 +1428,7 @@ footer {
             <div class="guia-prereq-icon">◉</div>
             <div>
               <div class="guia-prereq-text">Cuenta Google Workspace</div>
-              <div class="guia-prereq-sub">Para acceder a Gemini, Drive y Google Workspace Studio</div>
+              <div class="guia-prereq-sub">Para acceder a Gemini y Drive</div>
             </div>
           </div>
           <div class="guia-prereq">
@@ -1436,13 +1436,6 @@ footer {
             <div>
               <div class="guia-prereq-text">Syllabus o programa del curso</div>
               <div class="guia-prereq-sub">Puede ser un Word, PDF o Google Doc</div>
-            </div>
-          </div>
-          <div class="guia-prereq">
-            <div class="guia-prereq-icon">◉</div>
-            <div>
-              <div class="guia-prereq-text">Acceso a Gemini o Google Workspace Studio</div>
-              <div class="guia-prereq-sub">Google Workspace Studio gratuito · workspace.google.com/studio</div>
             </div>
           </div>
           <div class="guia-prereq">
@@ -1480,15 +1473,15 @@ footer {
             <div class="guia-step-body">
               <div class="guia-step-title">Convierte el contenido en <abbr title="JSON: JavaScript Object Notation — formato estándar para estructurar datos que la IA y los navegadores leen directamente">JSON</abbr> con Gemini</div>
               <p class="guia-step-desc">Pega el resumen en Gemini y usa el prompt de estructuración (ver abajo) para obtener un JSON con el listado de semanas en el mismo formato que usa este dashboard. Revisa semana por semana que los datos estén completos.</p>
-              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span><span class="guia-step-chip">Google Workspace Studio</span></div>
+              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
             </div>
           </div>
           <div class="guia-step">
             <div class="guia-step-num">04</div>
             <div class="guia-step-body">
               <div class="guia-step-title">Genera el <abbr title="HTML: HyperText Markup Language — el lenguaje de páginas web; un solo archivo .html es todo lo que necesitas para este dashboard">HTML</abbr> del dashboard</div>
-              <p class="guia-step-desc">En Google Workspace Studio, pasa este archivo como contexto y pídele que genere un dashboard nuevo con tu JSON de contenido. Indica el nombre de tu curso, la institución y la cantidad de semanas. El modelo produce el archivo HTML completo listo para abrir en el navegador.</p>
-              <div class="guia-step-chips"><span class="guia-step-chip">Google Workspace Studio</span><span class="guia-step-chip">Gemini</span></div>
+              <p class="guia-step-desc">En Gemini, pasa este archivo como contexto y pídele que genere un dashboard nuevo con tu JSON de contenido. Indica el nombre de tu curso, la institución y la cantidad de semanas. El modelo produce el archivo HTML completo listo para abrir en el navegador.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span></div>
             </div>
           </div>
           <div class="guia-step">
@@ -1655,10 +1648,9 @@ const data = {
       num: "03",
       colorClass: "sem-3",
       titulo: "Herramientas de IA e Integración Pedagógica",
-      resumen: "Más allá de usar IA, esta sesión se pregunta cómo integrarla pedagógicamente con criterio. Se trabajan Gems personalizados con el método RCTFR (Rol, Contexto, Tono, Formato, Restricciones), Google Workspace Studio y vibe coding en Colab. Y tres marcos para evaluar la calidad del uso: el framework SAMR (Sustitución, Aumento, Modificación, Redefinición — ¿sustituyes o redefines?), la taxonomía de Bloom (¿qué habilidades activas o desactivas?), y las guías de Mollick & Mollick sobre los roles posibles de la IA en el diseño de actividades.",
+      resumen: "Más allá de usar IA, esta sesión se pregunta cómo integrarla pedagógicamente con criterio. Se trabajan Gems personalizados con el método RCTFR (Rol, Contexto, Tono, Formato, Restricciones) y vibe coding en Colab. Y tres marcos para evaluar la calidad del uso: el framework SAMR (Sustitución, Aumento, Modificación, Redefinición — ¿sustituyes o redefines?), la taxonomía de Bloom (¿qué habilidades activas o desactivas?), y las guías de Mollick & Mollick sobre los roles posibles de la IA en el diseño de actividades.",
       temas: [
         "Gems de Gemini: asistentes personalizados configurados con el método RCTFR (Rol, Contexto, Tono, Formato, Restricciones)",
-        "Google Workspace Studio: ajustar temperatura del modelo, escribir instrucciones de sistema (system prompt), exportar a Colab",
         "Vibe coding: construir herramientas y dashboards en lenguaje natural, sin saber programar",
         "Framework SAMR (Sustitución, Aumento, Modificación, Redefinición): clasifica si el uso de IA sustituye o transforma la actividad pedagógica",
         "Taxonomía de Bloom y riesgos IA: Recordar y Comprender tienen riesgo alto (la IA lo hace); Analizar, Evaluar y Crear tienen riesgo bajo o son oportunidad si hay agencia real",
@@ -1669,7 +1661,6 @@ const data = {
       ],
       actividades: [
         "Configurar un Gem propio con instrucciones RCTFR (Rol, Contexto, Tono, Formato, Restricciones) para tu materia",
-        "Demo en Google Workspace Studio: ajustar temperatura y escribir un system prompt",
         "Primer ejercicio de vibe coding en Google Colab",
         "Clasificar actividades propias en el framework SAMR (Sustitución, Aumento, Modificación, Redefinición)",
         "Taller: rediseñar una evaluación hacia nivel Modificación o Redefinición"
@@ -1686,7 +1677,7 @@ const data = {
         "¿Qué rol debería jugar la IA en tu próxima evaluación: asistente, interlocutora, objeto de estudio, o ausente?",
         "Si diseñaras un Gem para tu materia, ¿qué incluirías en cada elemento RCTFR (Rol, Contexto, Tono, Formato, Restricciones)?"
       ],
-      herramientas: ["Gems", "Google Workspace Studio", "Google Colab"],
+      herramientas: ["Gems", "Google Colab"],
       lecturas: ["Prompting Guide (2024)", "Willison (2025)", "Mollick & Mollick (2023)"]
     },
     {
@@ -2067,12 +2058,6 @@ Tips adicionales (úsalos como prompts independientes):
       color: "#8f8f78",
       desc: "IA sobre tus propios documentos. Sube bibliografía y genera síntesis, comparaciones y preguntas de investigación.",
       url: "https://notebooklm.google.com"
-    },
-    {
-      nombre: "Google Workspace Studio",
-      color: "#6182d9",
-      desc: "Plataforma para experimentar con modelos Gemini directamente. Ajusta temperatura, escribe instrucciones de sistema (system prompts) y exporta a Google Colab.",
-      url: "https://workspace.google.com/studio"
     },
     {
       nombre: "Google Colab",
