@@ -1,0 +1,2429 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA para Docentes · Flacso · Diversa</title>
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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"><link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --agua: #6182d9;
+  --madera: #8f8f78;
+  --hongo: #e0dedb;
+  --cielo: #f0f0f0;
+  --negro: #1a1a18;
+  --bg: #f5f2ec;
+  --surface: #ffffff;
+  --muted: #7a7872;
+  --border: #d0cdc7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--negro);
+  min-height: 100vh;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ─── Header ─── */
+header {
+  background: var(--negro);
+  padding: 18px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  height: 26px;
+  opacity: 0.88;
+  display: block;
+}
+.header-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--bg);
+  letter-spacing: -0.01em;
+}
+.header-tagline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #7a7870;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Tabs nav ─── */
+.tabs-nav {
+  background: var(--negro);
+  padding: 0 56px;
+  display: flex;
+  gap: 0;
+  border-bottom: 0.5px solid #2e2e2b;
+}
+.tab-btn {
+  font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  color: #b8b5ae;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  margin-bottom: -0.5px;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: #d8d5cf; }
+.tab-btn.active {
+  color: var(--agua);
+  border-bottom-color: var(--agua);
+}
+
+/* ─── Container ─── */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 56px 80px;
+}
+
+/* ─── Section header ─── */
+.section-header {
+  margin-bottom: 40px;
+  padding-top: 52px;
+  position: relative;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 33px;
+  font-style: italic;
+  color: var(--negro);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 580px;
+}
+.section-desc {
+  font-size: 17px;
+  color: var(--muted);
+  margin-top: 12px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ─── Tab panels ─── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ══ SEMANAS — services.diversa.studio style ══ */
+
+/* Break out of .container to full viewport width */
+#tab-semanas .lec-intro-band {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+#tab-semanas .timeline {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.semanas-list { display: flex; flex-direction: column; }
+
+/* ── Section ── */
+.semana-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--cielo);
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+}
+.sem-2, .sem-4 { background: var(--hongo); }
+
+/* ── Background asset — same spec as diversa.studio/services ── */
+.semana-bg-asset {
+  position: absolute;
+  bottom: -24px;
+  left: 64px;
+  width: 340px;
+  opacity: 0.2;
+  pointer-events: none;
+  image-rendering: pixelated;
+  user-select: none;
+}
+
+/* ── Toggle header bar ── */
+.semana-toggle-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding: 52px 8% 38px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.semana-section:not(.open) .semana-toggle-bar {
+  padding-bottom: 52px;
+}
+.semana-toggle-bar:hover .semana-titulo { opacity: 0.7; }
+
+.semana-toggle-left {
+  min-width: 0;
+}
+
+.semana-num-tag {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sem-color);
+  margin-bottom: 14px;
+}
+
+.semana-titulo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(30px, 3vw, 50px);
+  font-style: italic;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--negro);
+  margin: 0;
+}
+
+.semana-chevron {
+  font-size: 26px;
+  color: var(--sem-color);
+  transition: transform 0.35s ease;
+  line-height: 1;
+  user-select: none;
+  justify-self: end;
+  padding-top: 4px;
+}
+.semana-section:not(.open) .semana-chevron {
+  transform: rotate(-90deg);
+}
+
+/* ── Collapsible body (grid animation trick) ── */
+.semana-collapsible {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+.semana-section:not(.open) .semana-collapsible {
+  grid-template-rows: 0fr;
+}
+.semana-collapsible-inner {
+  overflow: hidden;
+}
+
+/* ── Inner layout ── */
+.semana-inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 64px;
+  align-items: start;
+  padding: 0 8% 72px;
+}
+
+/* ── Left column ── */
+.semana-resumen {
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(28,26,23,0.62);
+  margin-bottom: 0;
+}
+
+.semana-reflexion {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(28,26,23,0.1);
+}
+
+.semana-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(28,26,23,0.4);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.reflexion-ideas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.reflexion-idea {
+  border-left: 2px solid var(--sem-color);
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 0 3px 3px 0;
+}
+.reflexion-idea-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--negro);
+  line-height: 1.55;
+}
+.reflexion-idea-src {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(28,26,23,0.4);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+.reflexion-preguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(28,26,23,0.07);
+}
+.reflexion-pregunta {
+  font-size: 14px;
+  color: rgba(28,26,23,0.55);
+  line-height: 1.65;
+  padding-left: 12px;
+  border-left: 1px solid rgba(28,26,23,0.12);
+}
+
+/* ── Right column ── */
+.semana-right {
+  padding-left: 48px;
+  border-left: 1px solid rgba(28,26,23,0.1);
+  padding-top: 8px;
+}
+
+.semana-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.semana-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.semana-list li {
+  font-size: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(28,26,23,0.72);
+  line-height: 1.6;
+  padding: 9px 0;
+  border-bottom: 0.5px solid rgba(28,26,23,0.07);
+}
+.semana-list li:last-child { border-bottom: none; }
+.semana-list li::before {
+  content: 'aa';
+  font-size: 6px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  color: var(--sem-color);
+}
+.semana-actividades .semana-list li::before { color: var(--madera); }
+
+.semana-chips-row {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(28,26,23,0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .semana-toggle-bar { padding: 40px 5% 32px; }
+  .semana-section:not(.open) .semana-toggle-bar { padding-bottom: 40px; }
+  .semana-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 5% 56px; }
+  .semana-right { padding-left: 0; border-left: none; padding-top: 0; border-top: 1px solid rgba(28,26,23,0.1); }
+  .semana-cols { grid-template-columns: 1fr; gap: 24px; }
+  .semana-bg-asset { width: 180px; opacity: 0.09; }
+}
+
+/* ── Accent colors per semana ── */
+.sem-1 { --sem-color: var(--agua); }
+.sem-2 { --sem-color: var(--madera); }
+.sem-3 { --sem-color: var(--agua); }
+.sem-4 { --sem-color: var(--madera); }
+
+.tl-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tl-reflexion { padding-top: 16px; border-top: 0.5px solid var(--border); }
+.tl-detail-block {
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 20px 22px;
+}
+/* en tl-zone-content, los bloques no tienen radius ni bg propio */
+.tl-detail-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.tl-detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.tl-detail-list li {
+  font-size: 16px;
+  color: var(--negro);
+  line-height: 1.65;
+  padding: 7px 0 7px 16px;
+  border-bottom: 0.5px solid var(--border);
+  position: relative;
+}
+.tl-detail-list li:last-child { border-bottom: none; }
+.tl-detail-list li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  color: var(--sem-color);
+  font-size: 19px;
+  line-height: 1;
+}
+
+.tl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+.chip-tool { background: rgba(97,130,217,0.1); color: var(--agua); }
+.chip-reading { background: var(--hongo); color: var(--muted); }
+
+/* Semana color variables */
+.sem-1 { --sem-color: var(--agua); }
+.sem-2 { --sem-color: var(--madera); }
+.sem-3 { --sem-color: var(--agua); }
+.sem-4 { --sem-color: var(--madera); }
+
+/* Semana color accents */
+
+
+
+
+/* Detail block accent per semana */
+
+/* ── Sección genérica dentro del body ── */
+.tl-section { margin-bottom: 20px; }
+.tl-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+
+/* ── Pregunta standalone ── */
+.pregunta-standalone {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 6px 0 6px 12px;
+  border-left: 2px solid var(--border);
+  margin-top: 8px;
+}
+/* ── Reading chip link ── */
+a.chip-reading-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color .15s, color .15s;
+}
+a.chip-reading-link:hover {
+  color: var(--negro);
+  border-bottom-color: var(--negro);
+}
+
+/* ── Ideas del curso ── */
+.tl-ideas-list { display: flex; flex-direction: column; gap: 8px; }
+.idea-item {
+  border-left: 3px solid var(--sem-color);
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+}
+.idea-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--negro);
+  line-height: 1.55;
+  margin-bottom: 5px;
+}
+.idea-src {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ── Preguntas guía ── */
+.tl-preguntas-list { display: flex; flex-direction: column; }
+.pregunta-item {
+  font-size: 16px;
+  color: var(--negro);
+  line-height: 1.55;
+  padding: 10px 0 10px 24px;
+  border-bottom: 0.5px solid var(--border);
+  position: relative;
+}
+.pregunta-item:last-child { border-bottom: none; }
+.pregunta-item::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--sem-color);
+}
+
+/* ══ LECTURAS ══ */
+
+/* Full-bleed */
+#tab-lecturas #lecturas-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lec-intro-band {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  padding: 56px 8% 48px;
+  box-sizing: border-box;
+  min-height: 250px;
+}
+.lec-intro-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(28,26,23,0.38);
+  display: block;
+  margin-bottom: 14px;
+}
+.lec-intro-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(28px, 2.8vw, 46px);
+  font-style: italic;
+  color: var(--negro);
+  line-height: 1.12;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+.lec-intro-desc {
+  font-size: 16px;
+  color: rgba(28,26,23,0.55);
+  line-height: 1.75;
+  max-width: 600px;
+}
+.lec-section {
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.lec-section:nth-child(even) { background: var(--cielo); }
+.lec-section:nth-child(odd)  { background: var(--hongo); }
+
+/* Toggle header — always visible, clickable — inherits section bg (hongo/cielo) */
+.lec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 52px 8% 38px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.15s;
+}
+.lec-section:not(.open) .lec-header { padding-bottom: 52px; }
+.lec-header:hover { opacity: 0.75; }
+
+.lec-toggle-left { flex: 1; min-width: 0; text-align: left; }
+.lec-sem-tag {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(30px, 3vw, 50px);
+  font-style: italic;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--negro);
+  display: block;
+  margin-bottom: 14px;
+}
+.lec-big-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(28,26,23,0.55);
+  display: block;
+  margin: 0;
+}
+.lec-chevron {
+  font-size: 22px;
+  color: var(--lec-color, var(--agua));
+  transition: transform 0.35s ease;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.lec-section:not(.open) .lec-chevron { transform: rotate(-90deg); }
+
+/* Collapsible body */
+.lec-collapsible {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+.lec-section:not(.open) .lec-collapsible { grid-template-rows: 0fr; }
+.lec-collapsible-inner { overflow: hidden; }
+
+.lec-items {
+  padding: 8px 8% 40px;
+}
+
+.lectura-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 20px;
+  padding: 20px 0;
+  border-bottom: 0.5px solid rgba(28,26,23,0.08);
+  align-items: start;
+}
+.lectura-item:last-child { border-bottom: none; }
+.lectura-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(28,26,23,0.25);
+  padding-top: 4px;
+  letter-spacing: 0.06em;
+}
+.lectura-autor {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lec-color, var(--agua));
+  margin-bottom: 5px;
+}
+.lectura-titulo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--negro);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.lectura-titulo a {
+  color: var(--negro);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(28,26,23,0.15);
+  transition: border-color .15s, color .15s;
+}
+.lectura-titulo a:hover {
+  color: var(--lec-color, var(--agua));
+  border-bottom-color: var(--lec-color, var(--agua));
+}
+.lectura-desc {
+  font-size: 13.5px;
+  color: rgba(28,26,23,0.55);
+  line-height: 1.65;
+  margin-top: 4px;
+}
+
+/* ══ APLICACIONES ══ */
+
+/* Full-bleed */
+#tab-aplicaciones .prompts-list {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prompts-intro-band {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  padding: 56px 8% 48px;
+}
+.prompts-intro-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(28,26,23,0.38);
+  display: block;
+  margin-bottom: 14px;
+}
+.prompts-intro-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(28px, 2.8vw, 46px);
+  font-style: italic;
+  color: var(--negro);
+  line-height: 1.12;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+.prompts-intro-desc {
+  font-size: 16px;
+  color: rgba(28,26,23,0.55);
+  line-height: 1.75;
+  max-width: 600px;
+}
+.prompts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.prompt-card {
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  border-radius: 0;
+  overflow: hidden;
+}
+.prompt-card:nth-child(even) { background: var(--hongo); }
+.prompt-card-header {
+  background: var(--negro);
+  padding: 22px 8%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s;
+}
+.prompt-card-header:hover { background: #252521; }
+.prompt-card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--prompt-color, var(--agua));
+  min-width: 96px;
+  white-space: nowrap;
+}
+.prompt-card-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  font-style: italic;
+  color: #f5f2ec;
+  letter-spacing: -0.01em;
+  flex: 1;
+  line-height: 1.2;
+}
+.prompt-arrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: var(--prompt-color, var(--agua));
+  transition: transform .25s;
+  flex-shrink: 0;
+}
+.prompt-card.open .prompt-arrow { transform: rotate(90deg); }
+.prompt-card-body {
+  display: none;
+  padding: 28px 8% 32px;
+}
+.prompt-card.open .prompt-card-body { display: block; }
+.prompt-card-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 22px;
+  max-width: 680px;
+}
+.prompt-text {
+  background: #f7f5f0;
+  border: 0.5px solid var(--border);
+  border-radius: 5px;
+  padding: 18px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3a3a36;
+  white-space: pre-wrap;
+  margin-bottom: 16px;
+}
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--negro);
+  color: var(--bg);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background .15s;
+}
+.copy-btn:hover { background: var(--agua); }
+.copy-btn.copied { background: var(--madera); }
+.copy-icon { font-size: 17px; }
+
+/* ══ VISIÓN FLACSO ══ */
+.pilares-list {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 52px;
+}
+.pilar-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 230px;
+  border-bottom: 0.5px solid var(--border);
+  border-left: 4px solid var(--pilar-color, var(--agua));
+}
+.pilar-row:last-child { border-bottom: none; }
+.pilar-label {
+  padding: 18px 20px;
+  background: var(--bg);
+  border-right: 0.5px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+}
+.pilar-nombre {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pilar-color, var(--agua));
+  line-height: 1.5;
+}
+.pilar-body {
+  padding: 18px 24px;
+  background: var(--surface);
+}
+.pilar-def {
+  font-size: 16px;
+  color: var(--negro);
+  line-height: 1.65;
+}
+.pilar-enriq {
+  font-size: 15px;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 0 4px 4px 0;
+  padding: 7px 12px;
+  margin-top: 10px;
+  line-height: 1.6;
+  border-left: 2px solid var(--pilar-color, var(--agua));
+}
+.pilar-pregunta-col {
+  padding: 18px 20px;
+  background: var(--bg);
+  border-left: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.pilar-pregunta {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.voces-section-header {
+  padding-top: 40px;
+  margin-bottom: 28px;
+  border-top: 0.5px solid var(--border);
+}
+.voces-section-header .section-label { margin-bottom: 10px; }
+.voz-statement {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--negro);
+  margin-top: 14px;
+}
+
+.voces-intro {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 520px;
+}
+.voces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 680px) { .voces-grid { grid-template-columns: 1fr; } }
+.voces-col-titulo {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid currentColor;
+}
+.voces-col-pregunta {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.voz-item {
+  font-size: 16px;
+  color: var(--negro);
+  line-height: 1.65;
+  padding: 9px 0 9px 18px;
+  border-bottom: 0.5px solid var(--border);
+  position: relative;
+}
+.voz-item:last-child { border-bottom: none; }
+.voz-item::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1;
+  color: var(--voces-color, var(--muted));
+  opacity: 0.5;
+}
+
+/* ══ STATEMENT (VISION) ══ */
+
+#tab-vision #vision-statement-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vision-block {
+  padding: 68px 8% 72px;
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.vision-block--1 { background: var(--cielo); }
+.vision-block--2 { background: var(--hongo); }
+.vision-block--3 { background: var(--negro); }
+
+.vision-block-inner {
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vision-block-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  display: block;
+}
+.vision-block--1 .vision-block-tag { color: var(--agua); }
+.vision-block--2 .vision-block-tag { color: var(--madera); }
+.vision-block--3 .vision-block-tag { color: var(--agua); }
+
+.vision-block-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-style: italic;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.vision-block--1 .vision-block-text,
+.vision-block--2 .vision-block-text { color: var(--negro); }
+.vision-block--3 .vision-block-text { color: rgba(245,242,236,0.9); }
+
+/* ══ GUÍA ══ */
+.guia-placeholder {
+  background: var(--surface);
+  border: 0.5px dashed var(--border);
+  border-radius: 8px;
+  padding: 56px 48px;
+  text-align: center;
+}
+.guia-mark {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 39px;
+  color: var(--agua);
+  opacity: 0.3;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.guia-placeholder-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  font-style: italic;
+  color: var(--negro);
+  margin-bottom: 12px;
+}
+.guia-placeholder-desc {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.guia-tools {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.guia-tool-chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--hongo);
+  color: var(--muted);
+}
+
+/* ══ GUÍA DE REPLICACIÓN ══ */
+#tab-guia #guia-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.guia-section {
+  padding: 56px 8% 68px;
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+}
+.guia-section--1 { background: var(--cielo); }
+.guia-section--2 { background: var(--hongo); }
+.guia-section--3 { background: var(--negro); }
+
+.guia-section-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 28px;
+}
+.guia-section--1 .guia-section-tag { color: var(--agua); }
+.guia-section--2 .guia-section-tag { color: var(--madera); }
+.guia-section--3 .guia-section-tag { color: var(--agua); }
+
+/* Dark section overrides */
+.guia-section--3 .guia-prompt-block {
+  background: rgba(245,242,236,0.05);
+  border-color: rgba(245,242,236,0.1);
+  border-left-color: var(--agua);
+}
+.guia-section--3 .guia-prompt-block:nth-child(even) { border-left-color: var(--madera); }
+.guia-section--3 .guia-prompt-label { color: var(--agua); }
+.guia-section--3 .guia-prompt-block:nth-child(even) .guia-prompt-label { color: var(--madera); }
+.guia-section--3 .guia-prompt-title { color: rgba(245,242,236,0.9); }
+.guia-section--3 .guia-prompt-text {
+  background: rgba(0,0,0,0.25);
+  border-top-color: rgba(245,242,236,0.1);
+  color: rgba(245,242,236,0.7);
+}
+.guia-section--3 .copy-btn {
+  background: rgba(245,242,236,0.07);
+  color: rgba(245,242,236,0.7);
+  border: 0.5px solid rgba(245,242,236,0.15);
+  border-radius: 0 0 7px 7px;
+}
+.guia-section--3 .copy-btn:hover { background: var(--agua); color: var(--bg); border-color: transparent; }
+.guia-section--3 .copy-btn.copied { background: var(--madera); color: var(--bg); border-color: transparent; }
+
+/* Prerequisitos */
+.guia-prereqs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.guia-prereq {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 7px;
+  padding: 14px 16px;
+}
+.guia-prereq-icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.guia-prereq-text { font-size: 15px; color: var(--negro); line-height: 1.5; }
+.guia-prereq-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+/* Pasos */
+.guia-steps { display: flex; flex-direction: column; }
+.guia-step {
+  display: flex;
+  gap: 28px;
+  padding: 22px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.guia-step:last-child { border-bottom: none; }
+.guia-step-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--agua);
+  min-width: 36px;
+  line-height: 1;
+  padding-top: 4px;
+  opacity: 0.55;
+}
+.guia-step:nth-child(even) .guia-step-num { color: var(--madera); }
+.guia-step-body { flex: 1; }
+.guia-step-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--negro);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+.guia-step-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.guia-step-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.guia-step-chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--hongo);
+  color: var(--muted);
+}
+
+/* Prompts clave */
+.guia-prompts { display: flex; flex-direction: column; gap: 12px; }
+.guia-prompt-block {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-left: 3px solid var(--agua);
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+}
+.guia-prompt-block:nth-child(even) { border-left-color: var(--madera); }
+.guia-prompt-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--agua);
+  padding: 12px 20px 0;
+}
+.guia-prompt-block:nth-child(even) .guia-prompt-label { color: var(--madera); }
+.guia-prompt-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--negro);
+  padding: 4px 20px 10px;
+}
+.guia-prompt-text {
+  background: #f7f5f0;
+  border-top: 0.5px solid var(--border);
+  padding: 16px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #3a3a36;
+  white-space: pre-wrap;
+}
+
+/* ══ LINKS ══ */
+
+#tab-links #links-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links-section { background: var(--surface); }
+
+.links-body {
+  background: var(--hongo);
+  padding: 52px 8% 72px;
+  position: relative;
+  overflow: hidden;
+}
+.links-asset {
+  position: absolute;
+  bottom: -32px;
+  right: 6%;
+  width: 400px;
+  height: 400px;
+  opacity: 0.14;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: pixelated;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 700px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+
+.link-card {
+  background: rgba(255,253,248,0.72);
+  border: 0.5px solid rgba(28,26,23,0.09);
+  border-top: 3px solid var(--border);
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+  transition: background .2s, box-shadow .2s;
+}
+.link-card:hover {
+  background: rgba(255,253,248,0.95);
+  box-shadow: 0 8px 28px rgba(28,26,23,0.1);
+}
+.link-name {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-style: italic;
+  color: var(--negro);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.link-desc {
+  font-size: 14px;
+  color: rgba(28,26,23,0.62);
+  line-height: 1.75;
+  flex: 1;
+}
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s;
+  align-self: flex-start;
+}
+.link-btn:hover { border-bottom-color: currentColor; }
+
+abbr[title] {
+  text-decoration: underline dotted currentColor;
+  cursor: help;
+  position: relative;
+}
+abbr[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--negro);
+  color: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+  white-space: normal;
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* ─── Footer ─── */
+footer {
+  text-align: center;
+  padding: 28px 48px;
+  border-top: 0.5px solid var(--border);
+  margin-top: 40px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #bbb8b2;
+}
+
+/* ── Colab sub-prompts ── */
+.colab-sub {
+  border-top: 0.5px solid var(--border);
+  padding: 0;
+}
+.colab-sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.colab-sub-header:hover .colab-sub-title { color: var(--negro); }
+.colab-sub-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color .15s;
+}
+.colab-sub-arrow {
+  font-size: 11px;
+  color: var(--muted);
+  transition: transform .2s;
+}
+.colab-sub.open .colab-sub-arrow { transform: rotate(90deg); }
+.colab-sub-body {
+  display: none;
+  padding-bottom: 14px;
+}
+.colab-sub.open .colab-sub-body { display: block; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo_cielo.png" class="header-logo" alt="Diversa">
+  <div class="header-title">IA para Docentes · Flacso 2026</div>
+  <div class="header-tagline">Futuros Más Humanos</div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="switchTab('semanas',this)">Semanas</button>
+  <button class="tab-btn" onclick="switchTab('lecturas',this)">Lecturas</button>
+  <button class="tab-btn" onclick="switchTab('aplicaciones',this)">Aplicaciones</button>
+  <button class="tab-btn" onclick="switchTab('vision',this)">Visión Flacso</button>
+  <button class="tab-btn" onclick="switchTab('guia',this)">Guía de Replicación</button>
+  <button class="tab-btn" onclick="switchTab('links',this)">Links</button>
+</nav>
+
+<div class="container">
+
+  <!-- SEMANAS -->
+  <div class="tab-panel active" id="tab-semanas">
+    <div class="lec-intro-band">
+      <span class="lec-intro-label">Resumen del curso</span>
+      <h2 class="lec-intro-title">Las cuatro semanas</h2>
+      <p class="lec-intro-desc">Haz clic en cada semana para ver el detalle de temas, actividades y herramientas.</p>
+    </div>
+    <div class="timeline" id="timeline-container"></div>
+  </div>
+
+  <!-- LECTURAS -->
+  <div class="tab-panel" id="tab-lecturas">
+    <div id="lecturas-container"></div>
+  </div>
+
+  <!-- APLICACIONES -->
+  <div class="tab-panel" id="tab-aplicaciones">
+    <div class="prompts-list" id="prompts-container"></div>
+  </div>
+
+  <!-- VISIÓN FLACSO -->
+  <div class="tab-panel" id="tab-vision">
+    <div id="vision-statement-container"></div>
+  </div>
+
+  <!-- GUÍA -->
+  <div class="tab-panel" id="tab-guia">
+    <div id="guia-container">
+
+    <div class="lec-intro-band">
+      <span class="lec-intro-label">Guía de Replicación</span>
+      <h2 class="lec-intro-title">Cómo replicar este dashboard</h2>
+      <p class="lec-intro-desc">Instrucciones para construir tu propio dashboard de curso usando herramientas de IA, sin necesidad de saber programar.</p>
+    </div>
+
+      <!-- Requisitos -->
+      <div class="guia-section guia-section--1">
+        <span class="guia-section-tag">Antes de empezar</span>
+        <div class="guia-prereqs">
+          <div class="guia-prereq">
+            <div class="guia-prereq-icon">◉</div>
+            <div>
+              <div class="guia-prereq-text">Cuenta Google Workspace</div>
+              <div class="guia-prereq-sub">Para acceder a Gemini, Drive y AI Studio</div>
+            </div>
+          </div>
+          <div class="guia-prereq">
+            <div class="guia-prereq-icon">◉</div>
+            <div>
+              <div class="guia-prereq-text">Syllabus o programa del curso</div>
+              <div class="guia-prereq-sub">Puede ser un Word, PDF o Google Doc</div>
+            </div>
+          </div>
+          <div class="guia-prereq">
+            <div class="guia-prereq-icon">◉</div>
+            <div>
+              <div class="guia-prereq-text">Acceso a Gemini o AI Studio</div>
+              <div class="guia-prereq-sub">AI Studio gratuito · aistudio.google.com</div>
+            </div>
+          </div>
+          <div class="guia-prereq">
+            <div class="guia-prereq-icon">◉</div>
+            <div>
+              <div class="guia-prereq-text">No necesitas saber programar</div>
+              <div class="guia-prereq-sub">Todo el código lo genera la IA a partir de tus instrucciones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasos -->
+      <div class="guia-section guia-section--2">
+        <span class="guia-section-tag">Pasos</span>
+        <div class="guia-steps">
+          <div class="guia-step">
+            <div class="guia-step-num">01</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Organiza el contenido de tu curso</div>
+              <p class="guia-step-desc">Reúne el programa de tu materia: semanas, temas, lecturas obligatorias, actividades y recursos. No hace falta que esté perfecto — la IA te ayuda a completar los vacíos. Un Google Doc con la estructura general es suficiente para empezar.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Google Docs</span></div>
+            </div>
+          </div>
+          <div class="guia-step">
+            <div class="guia-step-num">02</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Sube el programa a NotebookLM</div>
+              <p class="guia-step-desc">Carga tu documento en NotebookLM y pídele que genere un resumen estructurado semana a semana, con los materiales clave de cada una. Esto produce la base de datos de contenido que usarás en el siguiente paso.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">NotebookLM</span></div>
+            </div>
+          </div>
+          <div class="guia-step">
+            <div class="guia-step-num">03</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Convierte el contenido en <abbr title="JSON: JavaScript Object Notation — formato estándar para estructurar datos que la IA y los navegadores leen directamente">JSON</abbr> con Gemini</div>
+              <p class="guia-step-desc">Pega el resumen en Gemini y usa el prompt de estructuración (ver abajo) para obtener un JSON con el listado de semanas en el mismo formato que usa este dashboard. Revisa semana por semana que los datos estén completos.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Gemini</span><span class="guia-step-chip">AI Studio</span></div>
+            </div>
+          </div>
+          <div class="guia-step">
+            <div class="guia-step-num">04</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Genera el <abbr title="HTML: HyperText Markup Language — el lenguaje de páginas web; un solo archivo .html es todo lo que necesitas para este dashboard">HTML</abbr> del dashboard</div>
+              <p class="guia-step-desc">En AI Studio, pasa este archivo como contexto y pídele que genere un dashboard nuevo con tu JSON de contenido. Indica el nombre de tu curso, la institución y la cantidad de semanas. El modelo produce el archivo HTML completo listo para abrir en el navegador.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">AI Studio</span><span class="guia-step-chip">Gemini</span></div>
+            </div>
+          </div>
+          <div class="guia-step">
+            <div class="guia-step-num">05</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Personaliza colores, logo y tipografía</div>
+              <p class="guia-step-desc">Edita las variables <abbr title="CSS: Cascading Style Sheets — el bloque de estilos que controla colores, tipografía y espaciado de toda la página">CSS</abbr> al principio del archivo — todo el sistema visual está ahí. Cambia <code style="font-family:'DM Mono',monospace;font-size:13px">--agua</code> por el color institucional de tu cátedra, reemplaza el logo y ajusta el nombre en el encabezado. No necesitas tocar nada más.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Editor de texto</span><span class="guia-step-chip">Gemini</span></div>
+            </div>
+          </div>
+          <div class="guia-step">
+            <div class="guia-step-num">06</div>
+            <div class="guia-step-body">
+              <div class="guia-step-title">Publica y comparte</div>
+              <p class="guia-step-desc">Sube el archivo HTML a Google Drive y usa "Publicar en la web" para obtener un link directo que abre el dashboard en el navegador, sin necesitar servidor ni cuenta de GitHub. Comparte ese link con tus estudiantes como cualquier otro recurso del curso.</p>
+              <div class="guia-step-chips"><span class="guia-step-chip">Google Drive</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompts clave -->
+      <div class="guia-section guia-section--3">
+        <span class="guia-section-tag">Prompts clave</span>
+        <div class="guia-prompts">
+          <div class="guia-prompt-block">
+            <div class="guia-prompt-label">Paso 3 · Estructuración</div>
+            <div class="guia-prompt-title">Convertir el programa en datos JSON</div>
+            <div class="guia-prompt-text">Tengo el programa de mi materia [nombre] organizado en [N] semanas. A continuación te paso el contenido.
+
+Tu tarea es transformarlo en un array JSON con esta estructura exacta por semana:
+{ num, titulo, estado, objetivo, items: [ { tipo, titulo, autor, desc, tags, estado } ] }
+
+- tipo puede ser: "lectura", "actividad" o "video"
+- estado puede ser: "listo", "proceso" o "pendiente"
+- tags son entre 2 y 4 palabras clave relevantes
+- autor incluye la fuente o dónde conseguir el material
+
+Devuelve solo el JSON, sin texto adicional. Aquí está el programa: [pega el contenido]</div>
+            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+          </div>
+          <div class="guia-prompt-block">
+            <div class="guia-prompt-label">Paso 4 · Generación</div>
+            <div class="guia-prompt-title">Generar el HTML del dashboard</div>
+            <div class="guia-prompt-text">Tienes como referencia el archivo dashboard-flacso-profesores.html que te paso como contexto.
+
+Genera un dashboard nuevo para el curso "[nombre del curso]" en [institución], de [N] semanas.
+
+Usa este JSON como datos: [pega el JSON del paso anterior]
+
+Mantén exactamente la misma estructura de HTML, CSS y JavaScript del archivo de referencia. Solo cambia:
+- El título y subtítulo en el header
+- El array de semanas en el script
+- El color principal (--agua) por [código hex de tu color]
+
+Devuelve el archivo HTML completo.</div>
+            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+          </div>
+          <div class="guia-prompt-block">
+            <div class="guia-prompt-label">Paso 4 bis · Iteración</div>
+            <div class="guia-prompt-title">Agregar o corregir contenido después de generar</div>
+            <div class="guia-prompt-text">En el dashboard que acabas de generar, necesito hacer los siguientes cambios en el array de semanas:
+
+[describe qué semana y qué cambiar, por ejemplo:]
+- Semana 3: agrega una actividad llamada "X" con la descripción "Y"
+- Semana 5: cambia el estado de la lectura "Z" de pendiente a listo
+- Semana 7: corrige el autor del video
+
+Devuelve solo el bloque JavaScript modificado (el array completo), no el HTML entero.</div>
+            <button class="copy-btn" onclick="copyGuiaPrompt(this)"><span class="copy-icon">⎘</span> Copiar prompt</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /guia-container -->
+  </div>
+
+  <!-- LINKS -->
+  <div class="tab-panel" id="tab-links">
+    <div id="links-container"></div>
+  </div>
+
+</div>
+
+<footer>Diversa · IA para Docentes · Flacso 2026 · <abbr title="Creative Commons: Atribución (BY), No Comercial (NC), Sin Derivadas (ND) — puedes compartir el material con crédito, solo para usos no comerciales y sin modificarlo">CC BY-NC-ND 4.0</abbr></footer>
+
+<script>
+const data = {
+  semanas: [
+    {
+      num: "01",
+      colorClass: "sem-1",
+      titulo: "¿Qué es la Inteligencia Artificial?",
+      resumen: "El curso abre con una pregunta filosófica —¿pueden pensar las máquinas?— para construir una comprensión crítica de la IA. De Ada Lovelace y Alan Turing hasta los modelos generativos actuales, la sesión recorre la historia, las definiciones en disputa y las implicaciones éticas: la IA como red de extracción, como capitalismo de vigilancia y como sistema sociotécnico con efectos concretos en la educación superior.",
+      temas: [
+        "Historia: de Ada Lovelace y Alan Turing al Test de Turing",
+        "Cuatro definiciones tradicionales: pensar como humano, pensar racionalmente, actuar como humano, actuar racionalmente",
+        "Conceptos contemporáneos: red de extracción de recursos y trabajo, capitalismo de vigilancia, colonialismo digital",
+        "Algoritmos como sistemas sociotécnicos: no operan en el vacío, condensan decisiones sobre qué datos usar y para quién",
+        "Ramas de la IA: Machine Learning (ML), Procesamiento de Lenguaje Natural (PLN), visión por computadora",
+        "Aplicaciones cotidianas de la IA: probablemente la usaste hoy sin saberlo",
+        "Tres niveles del problema IA e integridad académica: inmediato (fraude), cognitivo (ausencia de metacognición), estructural (diseño de evaluaciones que se pueden optimizar sin aprender)",
+        "Desempeño vs. aprendizaje: si la tarea permite un resultado aceptable sin comprensión, el problema es el diseño de la evaluación"
+      ],
+      actividades: [
+        "Diagnóstico grupal: ¿qué saben y qué creen sobre la IA?",
+        "Mapeo colectivo de aplicaciones de IA en la vida cotidiana",
+        "Análisis comparativo de modelos: GPT (Generative Pre-trained Transformer, familia de modelos de OpenAI), Gemini y Claude",
+        "Primer contacto con Gemini en Google Docs",
+        "Discusión: marcos analíticos sobre IA y educación superior"
+      ],
+      ideas: [
+        { text: "¿Pueden pensar las máquinas? El Test de Turing se basa en la capacidad de la máquina de entablar diálogo ocultando su naturaleza artificial.", src: "Turing, 1950" },
+        { text: "La IA no es simplemente tecnología: es una red de extracción de recursos, trabajo humano y datos, profundamente interrelacionada con estructuras económicas y políticas.", src: "Crawford, 2021" },
+        { text: "La IA forma parte de un sistema socio-técnico que captura, clasifica y valora la vida humana en términos de datos, subordinándola a lógicas de extractivismo, vigilancia y control.", src: "Ricaurte, 2019" },
+        { text: "Si una tarea permite generar un resultado aceptable sin comprensión, el problema es el diseño de la evaluación, no el uso de la IA.", src: "Sesión 1" }
+      ],
+      preguntas: [
+        "¿La IA piensa o predice? ¿Qué cambia en tu práctica docente esa distinción?",
+        "¿Para qué datos fue entrenada la herramienta que usas cotidianamente? ¿Quién los produjo?",
+        "¿Cuál de las cuatro definiciones tradicionales de IA describe mejor las herramientas que usas?",
+        "¿Cómo rediseñarías una evaluación para que la IA no la pueda «optimizar» sin aprendizaje real?"
+      ],
+      herramientas: ["Gemini"],
+      lecturas: ["Turing (1950)", "Crawford (2021)", "Eubanks (2018)", "Ricaurte (2019)", "Costanza-Chock (2020)"]
+    },
+    {
+      num: "02",
+      colorClass: "sem-2",
+      titulo: "¿Cómo funciona la IA?",
+      resumen: "La IA no piensa: predice estadísticamente. Esta sesión abre la caja para entender cómo aprenden los modelos de lenguaje — datos, entrenamiento, tokens, pesos — y qué implica esto para el aula. Se introduce el context rot (las conversaciones largas degradan los resultados), el AI Harness como filosofía de gobernanza personal, y NotebookLM como herramienta práctica para construir asistentes bibliográficos sobre fuentes propias.",
+      temas: [
+        "¿La IA piensa? Predicción estadística vs. razonamiento real",
+        "Cómo aprende un modelo: datos de entrenamiento, pesos y tokens (unidades mínimas de texto que procesa el modelo)",
+        "Sesgos estructurales: los datos no son neutrales, el modelo aprende la desigualdad histórica como norma",
+        "Principales usos de la IA en educación: de la automatización a la toma de decisiones",
+        "Cuándo sí usar y cuándo no usar IA: criterios prácticos para la práctica docente",
+        "Context rot (podredumbre del contexto): en conversaciones largas el modelo pierde el hilo; inicia conversaciones nuevas para tareas nuevas",
+        "AI Harness (arnés de IA): tú eres quien dirige la herramienta, no al revés — gobernarla con intención, criterio y control",
+      ],
+      actividades: [
+        "Dinámica grupal: simular cómo aprende un modelo (roles de datos, pesos y predicción)",
+        "Exploración guiada de NotebookLM con bibliografía real del curso",
+        "Construir un asistente académico personalizado con fuentes propias",
+        "Identificar y comparar sesgos en distintos modelos frente a una misma consulta",
+        "Ejercicio práctico: detectar context rot en una conversación larga"
+      ],
+      ideas: [
+        { text: "La IA no piensa: predice la siguiente palabra más probable con base en patrones estadísticos del entrenamiento. No comprende — calcula.", src: "Sesión 2" },
+        { text: "Context rot: en conversaciones largas, el modelo «olvida» el contexto inicial y degrada la calidad de sus respuestas. Empieza conversaciones nuevas para tareas nuevas.", src: "LangChain / Sesión 2" },
+        { text: "Harness AI no significa usar IA. Significa gobernarla con intención, criterio y control sobre los resultados. Tú eres quien dirige, no la herramienta.", src: "Taller 2" },
+        { text: "Si los datos históricos reflejan desigualdad, el modelo aprende esa desigualdad como norma y la escala sin fricción ni revisión.", src: "Sesión 2" }
+      ],
+      preguntas: [
+        "¿Cuándo sí y cuándo no tiene sentido usar IA para una tarea concreta de tu práctica docente?",
+        "¿Qué significa gobernar la IA? ¿Qué control concreto tienes sobre los resultados de una herramienta?",
+        "¿Qué sesgos podrían estar presentes en la bibliografía sobre la que cargaste tu asistente en NotebookLM?",
+        "¿Cómo reconocerías que estás experimentando context rot en una conversación activa?"
+      ],
+      herramientas: ["NotebookLM", "Gemini"],
+      lecturas: ["Selwyn (2019)"]
+    },
+    {
+      num: "03",
+      colorClass: "sem-3",
+      titulo: "Herramientas de IA e Integración Pedagógica",
+      resumen: "Más allá de usar IA, esta sesión se pregunta cómo integrarla pedagógicamente con criterio. Se trabajan Gems personalizados con el método RCTFR (Rol, Contexto, Tono, Formato, Restricciones), Google AI Studio y vibe coding en Colab. Y tres marcos para evaluar la calidad del uso: el framework SAMR (Sustitución, Aumento, Modificación, Redefinición — ¿sustituyes o redefines?), la taxonomía de Bloom (¿qué habilidades activas o desactivas?), y las guías de Mollick & Mollick sobre los roles posibles de la IA en el diseño de actividades.",
+      temas: [
+        "Gems de Gemini: asistentes personalizados configurados con el método RCTFR (Rol, Contexto, Tono, Formato, Restricciones)",
+        "AI Studio: ajustar temperatura del modelo, escribir instrucciones de sistema (system prompt), exportar a Colab",
+        "Vibe coding: construir herramientas y dashboards en lenguaje natural, sin saber programar",
+        "Framework SAMR (Sustitución, Aumento, Modificación, Redefinición): clasifica si el uso de IA sustituye o transforma la actividad pedagógica",
+        "Taxonomía de Bloom y riesgos IA: Recordar y Comprender tienen riesgo alto (la IA lo hace); Analizar, Evaluar y Crear tienen riesgo bajo o son oportunidad si hay agencia real",
+        "7 formas de asignar IA a estudiantes según Mollick & Mollick: asistente de escritura, interlocutora intelectual, simuladora de escenarios, tutora adaptativa, objeto de estudio, co-creadora, o ausente",
+        "Guía 1 — Responsabilidad en el aula: 5 riesgos docentes (inversión cognitiva, dependencia, alucinaciones, desplazamiento cognitivo, reducción de interacción social)",
+        "Guía 2 — Deliberación ética: alfabetizar en decisiones morales con IA, distinto a alfabetización digital",
+        "Guía 3 — Evaluación e IA: semáforo del riesgo ético-pedagógico para tipos de evaluación (sumativa, formativa, autorregulación, evidencia)"
+      ],
+      actividades: [
+        "Configurar un Gem propio con instrucciones RCTFR (Rol, Contexto, Tono, Formato, Restricciones) para tu materia",
+        "Demo en AI Studio: ajustar temperatura y escribir un system prompt",
+        "Primer ejercicio de vibe coding en Google Colab",
+        "Clasificar actividades propias en el framework SAMR (Sustitución, Aumento, Modificación, Redefinición)",
+        "Taller: rediseñar una evaluación hacia nivel Modificación o Redefinición"
+      ],
+      ideas: [
+        { text: "SAMR — Sustitución (alto riesgo: sin aprendizaje) → Aumento (reflexión necesaria) → Modificación (pensamiento activo) → Redefinición (creación genuina con agencia real del estudiante).", src: "Sesión 7" },
+        { text: "Bloom y IA: Recordar y Comprender tienen riesgo alto (la IA lo hace por el estudiante); Analizar, Evaluar y Crear tienen riesgo bajo o representan una oportunidad si hay agencia.", src: "Sesión 7" },
+        { text: "Mollick & Mollick (2023): diseña deliberadamente el rol de la IA — asistente de escritura, interlocutora intelectual, simuladora de escenarios, tutora adaptativa, objeto de estudio, co-creadora, o ausente.", src: "Sesión 7" },
+        { text: "Un Gem bien configurado tiene: Rol claro + Contexto relevante + Tono apropiado + Formato definido + Restricciones explícitas. El acrónimo es RCTFR.", src: "Sesión 3" }
+      ],
+      preguntas: [
+        "¿En qué nivel del framework SAMR (Sustitución, Aumento, Modificación, Redefinición) están las actividades actuales de tu curso? ¿Cuáles podrías mover hacia Modificación o Redefinición?",
+        "¿Qué habilidades cognitivas de Bloom activa tu uso habitual de IA? ¿Y el uso habitual de tus estudiantes?",
+        "¿Qué rol debería jugar la IA en tu próxima evaluación: asistente, interlocutora, objeto de estudio, o ausente?",
+        "Si diseñaras un Gem para tu materia, ¿qué incluirías en cada elemento RCTFR (Rol, Contexto, Tono, Formato, Restricciones)?"
+      ],
+      herramientas: ["Gems", "AI Studio", "Google Colab"],
+      lecturas: ["Prompting Guide (2024)", "Willison (2025)", "Mollick & Mollick (2023)"]
+    },
+    {
+      num: "04",
+      colorClass: "sem-4",
+      titulo: "Riesgos, Sesgos y Privacidad",
+      resumen: "Cierre crítico del curso: qué puede salir mal cuando una organización educativa adopta IA y cómo anticiparlo. Se trabajan cuatro riesgos clave — sesgo algorítmico, fuga de datos, dependencia tecnológica y opacidad — con el marco de Weapons of Math Destruction como lente analítico. Se analiza el marco normativo de Ecuador y el AI Act europeo, y se abre la pregunta del Sur Global: ¿quién define qué cuenta como riesgo y para quién?",
+      temas: [
+        "Sesgo algorítmico: el modelo aprende desigualdad histórica como norma y la aplica a escala sin fricción ni revisión",
+        "Weapons of Math Destruction (ADM, armas de destrucción matemática): tres rasgos que convierten un modelo en un riesgo — opacidad, escala y daño",
+        "Privacidad y fuga de datos: cuatro preguntas antes de usar cualquier herramienta — ¿qué dato entrego?, ¿dónde se aloja?, ¿se usa para reentrenar el modelo?, ¿quién puede acceder?",
+        "Dependencia tecnológica: costos que suben sin alternativa real, pérdida de saberes internos, soberanía tecnológica comprometida",
+        "Opacidad: la caja negra — decisiones que nadie puede explicar ni apelar; imposible auditar o rendir cuentas",
+        "Marco normativo: Ecuador y AI Act (Ley de Inteligencia Artificial de la Unión Europea)",
+        "Lente crítico Sur Global: ¿riesgo para quién?, extractivismo de datos, infraestructura en el Norte con impacto en el Sur",
+        "Actividad: matriz de análisis de riesgos organizacionales — herramienta × tipo de dato × riesgo × acción de mitigación"
+      ],
+      actividades: [
+        "Mapear herramientas de IA en uso y qué datos procesa cada una",
+        "Auditoría básica de privacidad: ¿a dónde van tus datos?",
+        "Clasificar riesgos de la organización propia con la matriz de los cuatro riesgos",
+        "Lectura comentada: Weapons of Math Destruction (caps. seleccionados)",
+        "Debate: ¿tu institución debería tener política de uso de IA y cómo debería verse?"
+      ],
+      ideas: [
+        { text: "La IA no es neutral: hereda el mundo que la entrena. Decisiones que automatizamos sin auditar, datos que cedemos sin saber dónde quedan, personas afectadas que no participaron del diseño.", src: "Sesión 10" },
+        { text: "Un modelo se convierte en arma de destrucción matemática cuando combina opacidad (criterios ocultos), escala (millones de personas) y daño (refuerza desventajas con predicciones autocumplidas).", src: "O'Neil, 2016" },
+        { text: "¿Riesgo para quién? Las comunidades afectadas rara vez participan del diseño. Datos y cómputo se extraen del Sur, el valor se captura en el Norte.", src: "Sesión 10 — lente Sur Global" },
+        { text: "Ningún dato es neutral, ninguna herramienta es inocente. La gestión de riesgos no es desconfianza tecnológica: es la condición para usar la IA con responsabilidad y justicia.", src: "Sesión 10" }
+      ],
+      preguntas: [
+        "¿Qué datos de tu institución cedes cuando usas herramientas de IA externas? ¿Dónde se alojan y bajo qué jurisdicción?",
+        "¿Cuáles de los cuatro riesgos (sesgo, fuga, dependencia, opacidad) son más urgentes en tu organización?",
+        "¿Tu institución tiene política de uso de IA? Si no, ¿cómo debería verse?",
+        "¿Quién define qué cuenta como riesgo en el contexto latinoamericano? ¿Qué perspectivas están ausentes en los marcos normativos actuales?"
+      ],
+      herramientas: ["Análisis crítico"],
+      lecturas: ["O'Neil (2016)", "Birhane (2021)", "Ruha Benjamin (2019)", "Acemoglu (2024)", "Miceli & Posada (2022)"]
+    }
+  ],
+
+  lecturas: [
+    {
+      semana: "Semana 01",
+      color: "#6182d9",
+      items: [
+        {
+          autor: "Turing, Alan", año: "1950",
+          titulo: "Computing Machinery and Intelligence",
+          url: "https://redirect.cs.umbc.edu/courses/471/papers/turing.pdf",
+          desc: "El artículo fundacional que introduce el Test de Turing y la pregunta «¿Pueden pensar las máquinas?»"
+        },
+        {
+          autor: "Crawford, Kate", año: "2021",
+          titulo: "Atlas of AI — Introducción",
+          url: "https://yalebooks.yale.edu/book/9780300209570/atlas-of-ai/",
+          desc: "La IA como red de extracción de recursos, trabajo y datos. Perspectiva crítica sobre la infraestructura material de la inteligencia artificial."
+        },
+        {
+          autor: "Eubanks, Virginia", año: "2018",
+          titulo: "Automating Inequality — Cap. 1",
+          url: "https://us.macmillan.com/books/9781250074317/automatinginequality",
+          desc: "Cómo los sistemas automatizados de toma de decisiones afectan desproporcionadamente a comunidades vulnerables."
+        },
+        {
+          autor: "Costanza-Chock, Sasha", año: "2020",
+          titulo: "Design Justice",
+          url: "https://designjustice.mitpress.mit.edu/",
+          desc: "Marco para pensar el diseño tecnológico desde la justicia y la inclusión, cuestionando quién diseña y para quién."
+        },
+        {
+          autor: "Ricaurte, Paola", año: "2019",
+          titulo: "Data Epistemologies, Coloniality of Power, and Resistance",
+          url: "https://doi.org/10.1177/2056305119851713",
+          desc: "Perspectiva latinoamericana sobre la colonialidad en la producción y uso de datos e inteligencia artificial."
+        }
+      ]
+    },
+    {
+      semana: "Semana 02",
+      color: "#8f8f78",
+      items: [
+        {
+          autor: "Selwyn, Neil", año: "2019",
+          titulo: "Should Robots Replace Teachers?",
+          url: "https://www.wiley.com/en-gb/Should+Robots+Replace+Teachers%3F-p-9781509528035",
+          desc: "Análisis crítico de las promesas y límites de la IA en la educación. ¿Qué puede y qué no puede reemplazar la tecnología en el aula?"
+        }
+      ]
+    },
+    {
+      semana: "Semana 03",
+      color: "#6182d9",
+      items: [
+        {
+          autor: "promptingguide.ai", año: "2024",
+          titulo: "Prompt Engineering Guide — Few-shot prompting",
+          url: "https://www.promptingguide.ai/techniques/fewshot",
+          desc: "Por qué dar ejemplos en el prompt mejora los resultados. Solo la sección de few-shot prompting."
+        },
+        {
+          autor: "Willison, Simon", año: "2025",
+          titulo: "What is vibe coding and why does it matter?",
+          url: "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+          desc: "Reflexión del creador del término sobre qué significa construir software en lenguaje natural con IA como copiloto."
+        }
+      ]
+    },
+    {
+      semana: "Semana 04",
+      color: "#8f8f78",
+      items: [
+        {
+          autor: "O'Neil, Cathy", año: "2016",
+          titulo: "Weapons of Math Destruction",
+          url: "https://www.penguinrandomhouse.com/books/241363/weapons-of-math-destruction-by-cathy-oneil/",
+          desc: "Los tres rasgos que convierten un modelo en un arma de destrucción matemática: opacidad, escala y daño."
+        },
+        {
+          autor: "Birhane, Abeba", año: "2021",
+          titulo: "Algorithmic Injustice: A Relational Ethics Approach",
+          url: "https://doi.org/10.1016/j.patter.2021.100205",
+          desc: "Los enfoques técnicos son insuficientes porque ignoran estructuras de poder. Se requiere una ética relacional centrada en las comunidades afectadas."
+        },
+        {
+          autor: "Benjamin, Ruha", año: "2019",
+          titulo: "Race After Technology: The New Jim Code",
+          url: "https://www.ruhabenjamin.com/race-after-technology",
+          desc: "La automatización puede ocultar y profundizar la discriminación mientras aparece neutral — el Nuevo Código Jim."
+        },
+        {
+          autor: "Acemoglu, Daron", año: "2024",
+          titulo: "Simple Macroeconomics of AI",
+          url: "https://doi.org/10.3386/w32487",
+          desc: "Las promesas macroeconómicas de la IA están sobrestimadas. Las ganancias se concentran en el capital; los trabajadores de tareas rutinarias pierden ingresos."
+        },
+        {
+          autor: "Miceli, M. & Posada, J.", año: "2022",
+          titulo: "The Data-Production Dispositif",
+          url: "https://doi.org/10.1145/3492853",
+          desc: "La IA depende del trabajo manual, invisible y precarizado de millones de personas en el Sur Global. ¿Quién etiquetó los datos de tu herramienta?"
+        }
+      ]
+    }
+  ],
+
+  prompts: [
+    {
+      label: "Aplicación 01",
+      color: "#6182d9",
+      titulo: "Revisión de Syllabus",
+      desc: "Analiza el syllabus de tu curso e identifica oportunidades de mejora en coherencia pedagógica, integración de pensamiento crítico sobre IA y brechas bibliográficas.",
+      prompt: `Eres un asistente pedagógico experto en educación universitaria y pensamiento crítico sobre tecnología. Voy a compartirte el syllabus de mi curso. Analízalo y proporciona:
+
+1. Coherencia entre objetivos de aprendizaje, contenidos y sistema de evaluación
+2. Oportunidades para incorporar perspectivas críticas sobre IA y datos
+3. Posibles brechas o desequilibrios en la bibliografía
+4. Sugerencias concretas de actividades prácticas que complementen el contenido
+
+Sé específico y referencia partes concretas del syllabus. Si algo no queda claro, pregunta antes de analizar.
+
+SYLLABUS:
+[pega tu syllabus aquí]`
+    },
+    {
+      label: "Aplicación 02",
+      color: "#6182d9",
+      titulo: "Revisión de Estilos",
+      desc: "Obtén feedback editorial sobre tus textos académicos: claridad argumentativa, consistencia terminológica, estructura de párrafos y afirmaciones que necesitan respaldo.",
+      prompt: `Eres un editor académico especializado en ciencias sociales y estudios críticos. Revisa el siguiente texto y proporciona retroalimentación en cuatro áreas:
+
+1. ARGUMENTO: ¿El argumento central es claro y está bien sostenido a lo largo del texto?
+2. TERMINOLOGÍA: ¿Los términos técnicos se usan de forma consistente? ¿Alguno necesita definición?
+3. ESTRUCTURA: ¿Los párrafos tienen una idea central clara? ¿Las transiciones son fluidas?
+4. RESPALDO: ¿Hay afirmaciones que necesitan cita o evidencia adicional?
+
+Organiza tu respuesta usando los encabezados anteriores. Señala ejemplos concretos citando el texto.
+
+TEXTO:
+[pega tu texto aquí]`
+    },
+    {
+      label: "Aplicación 03",
+      color: "#8f8f78",
+      titulo: "Diseño de Actividad Pedagógica",
+      desc: "Genera una actividad de aprendizaje completa para tu clase: objetivo, instrucciones, materiales y criterios de evaluación adaptados a tu nivel y materia.",
+      prompt: `Eres un asistente pedagógico especializado en educación universitaria de posgrado. Voy a darte el contexto de mi clase y necesito que diseñes una actividad de aprendizaje completa.
+
+Produce:
+1. OBJETIVO: qué habilidad o conocimiento desarrolla la actividad
+2. INSTRUCCIONES: paso a paso, claras para los estudiantes
+3. MATERIALES: qué necesitan preparar o traer
+4. TIEMPO ESTIMADO: duración sugerida
+5. CRITERIOS DE EVALUACIÓN: 3 a 5 criterios observables
+6. VARIANTE DIGITAL: cómo adaptarla si la clase es remota
+
+CONTEXTO:
+- Materia: [nombre de tu materia]
+- Nivel: [maestría / doctorado / posgrado especialización]
+- Tema de la sesión: [tema específico]
+- Número de estudiantes: [cantidad aproximada]
+- Habilidad a desarrollar: [análisis crítico / trabajo colaborativo / escritura / otro]`
+    },
+    {
+      label: "Aplicación 04",
+      color: "#8f8f78",
+      titulo: "Feedback a Ensayo Estudiantil",
+      desc: "Genera retroalimentación estructurada y formativa para trabajos escritos de tus estudiantes, con equilibrio entre fortalezas y áreas de mejora.",
+      prompt: `Eres asistente de una docente universitaria. Tu tarea es generar feedback formativo sobre un ensayo estudiantil. El feedback debe ser constructivo, específico y equilibrado — no solo señalar errores sino también reconocer fortalezas.
+
+Estructura el feedback así:
+1. FORTALEZAS (2-3 puntos): qué funciona bien y por qué
+2. ARGUMENTO CENTRAL: ¿es claro y defendible? ¿está sostenido con evidencia?
+3. USO DE FUENTES: ¿cita apropiadamente? ¿integra las fuentes o solo las lista?
+4. ÁREAS DE MEJORA (2-3 puntos): con sugerencia concreta para cada una
+5. PRÓXIMO PASO: una sola acción prioritaria que transformaría más el trabajo
+
+Tono: académico pero cercano. Dirígete al estudiante en segunda persona.
+
+CONTEXTO DEL CURSO:
+- Materia: [nombre]
+- Nivel de exigencia: [básico / intermedio / avanzado]
+- Rúbrica principal: [describe brevemente los criterios si los tienes]
+
+ENSAYO:
+[pega el texto del ensayo aquí]`
+    },
+    {
+      label: "Aplicación 05",
+      color: "#6182d9",
+      titulo: "Preguntas de Discusión",
+      desc: "Genera preguntas de discusión para dinamizar el debate en clase a partir de una lectura o tema, en distintos niveles de profundidad cognitiva.",
+      prompt: `Eres un facilitador experto en discusión académica universitaria. A partir del texto o tema que te proporciono, genera preguntas de discusión en tres niveles:
+
+NIVEL 1 — COMPRENSIÓN (2 preguntas)
+Verifican que los estudiantes entendieron el argumento central. Respuesta directa en el texto.
+
+NIVEL 2 — ANÁLISIS (3 preguntas)
+Requieren relacionar ideas, identificar supuestos o comparar con otros autores. No tienen respuesta única.
+
+NIVEL 3 — POSICIÓN (2 preguntas)
+Invitan a tomar postura, vincular con contexto propio o cuestionar al autor. Abren debate genuino.
+
+Para cada pregunta indica en una línea: qué habilidad activa y cuánto tiempo de discusión sugiere.
+
+TEXTO O TEMA:
+[pega el fragmento, título y autor, o describe el tema]`
+    },
+    {
+      label: "Aplicación 06",
+      color: "#6182d9",
+      titulo: "Síntesis de Texto Académico",
+      desc: "Obtén una síntesis estructurada de cualquier texto académico: argumento central, conceptos clave, posición del autor y puntos débiles.",
+      prompt: `Eres un asistente de investigación académica. Lee el siguiente texto y produce una síntesis estructurada para uso docente.
+
+La síntesis debe incluir:
+1. ARGUMENTO CENTRAL: en 2-3 oraciones, la tesis principal del autor
+2. CONCEPTOS CLAVE: lista de 4-6 conceptos con definición breve en los términos del propio texto
+3. ESTRUCTURA DEL ARGUMENTO: cómo construye el autor su caso (cronológico, comparativo, inductivo, etc.)
+4. DIÁLOGO CON OTROS AUTORES: a quién cita, a quién critica, con quién dialoga
+5. PUNTOS DÉBILES O LIMITACIONES: qué críticas podría recibir el argumento
+6. PREGUNTAS QUE ABRE: 2 preguntas que el texto deja sin resolver
+
+Usa lenguaje académico claro. No interpretes más allá de lo que el texto dice.
+
+TEXTO:
+[pega el texto o fragmento aquí]`
+    },
+    {
+      label: "Colab",
+      color: "#e0dedb",
+      titulo: "Análisis de clase en Google Colab",
+      desc: "Serie de prompts para construir paso a paso un análisis visual de los datos de tu clase universitaria. Ejecuta en orden o salta a la celda que necesitas.",
+      isColab: true,
+      subprompts: [
+        { titulo: "Colab · Preparar el entorno", desc: "Primera celda de cualquier análisis en Google Colab: instala e importa las librerías necesarias con comentarios que explican cada línea.", prompt: `Estoy haciendo un ejercicio de análisis de datos de mi clase universitaria en Google Colab.
+Necesito una celda de código que instale e importe estas librerías: pandas, matplotlib, seaborn, y google-generativeai.
+Que al final imprima un mensaje que diga "Entorno listo para analizar tu clase".
+Explícame en un comentario qué hace cada línea.` },
+        { titulo: "Colab · Crear datos de clase", desc: "Genera un DataFrame de ejemplo con 20 estudiantes ficticios con nombres latinoamericanos: asistencia, dos parciales, nota final, participación y grupo A/B.", prompt: `Necesito crear datos de ejemplo de una clase universitaria en Python con pandas.
+La clase tiene 20 estudiantes con nombres latinoamericanos ficticios (mezcla de hombres y mujeres).
+Para cada estudiante necesito:
+- asistencia a 10 clases (True/False, con una tasa de asistencia realista de 70-95%)
+- nota_parcial_1 (entre 40 y 100, distribución realista con más notas en el rango 60-85)
+- nota_parcial_2 (similar al parcial 1, con ligera correlación positiva)
+- nota_final (promedio ponderado: 30% parcial1, 30% parcial2, 40% final, entre 40-100)
+- participacion (entero del 1 al 5, con distribución concentrada en 2-4)
+- grupo (A o B, dividido equitativamente)
+Crea un DataFrame llamado df y muestra las primeras 5 filas con df.head().
+Usa random seed 42 para reproducibilidad.` },
+        { titulo: "Colab · Gráfico de asistencia", desc: "Barras horizontales por estudiante, coloreadas por nivel (verde/amarillo/rojo), con línea de mínimo requerido y conteo de estudiantes en riesgo.", prompt: `Tengo un DataFrame llamado df con columnas: estudiante, pct_asistencia, grupo, estado.
+Crea un gráfico de barras horizontales que muestre el porcentaje de asistencia de cada estudiante, ordenado de mayor a menor.
+- Las barras deben tener colores según el nivel: verde si asistencia >= 80%, amarillo si está entre 60-79%, rojo si es menor a 60%
+- Agrega una línea vertical punteada en 80% que diga "Mínimo requerido"
+- El título debe ser "Asistencia por estudiante"
+- Que se vea limpio y profesional, con los nombres legibles
+- Al final imprime cuántos estudiantes están por debajo del 80%
+
+Variante — cambiar el umbral mínimo:
+Cambia el umbral de asistencia mínima de 80% a [tu porcentaje]% y actualiza el color de las barras en consecuencia.` },
+        { titulo: "Colab · Distribución de notas", desc: "Dos gráficos lado a lado: histograma con curva de densidad y líneas de media/mediana, más barras apiladas de estado académico por grupo.", prompt: `Tengo un DataFrame df con columnas: promedio (nota final 0-100), grupo (A o B), estado (Excelente / Aprobado / En riesgo / Reprobado).
+Crea una figura con 2 gráficos lado a lado:
+1. Izquierda: histograma de la columna 'promedio' con curva de densidad superpuesta, líneas verticales para la media y mediana, título "Distribución de notas"
+2. Derecha: gráfico de barras apiladas mostrando cuántos estudiantes hay en cada estado separado por grupo A y B, título "Estado académico por grupo"
+Paleta de colores profesional, etiquetas claras.
+Imprime también las estadísticas básicas: media, mediana, nota mínima y máxima.` },
+        { titulo: "Colab · Mapa de calor de desempeño", desc: "Heatmap con todos los estudiantes y métricas normalizadas (parciales, nota final, participación, asistencia) usando paleta RdYlGn.", prompt: `Tengo un DataFrame df con columnas: estudiante, parcial_1, parcial_2, nota_final, promedio, participacion (1-5), pct_asistencia (0-100).
+Crea un heatmap usando seaborn donde:
+- Las filas son los estudiantes (ordenados por promedio descendente)
+- Las columnas son: parcial_1, parcial_2, nota_final, promedio, participacion, pct_asistencia
+- Normaliza cada columna entre 0 y 1 para que sean comparables
+- Usa la paleta de colores 'RdYlGn' (rojo=bajo, verde=alto)
+- Que los valores sean visibles dentro de cada celda
+- Título: "Mapa de desempeño integral de la clase"
+- Tamaño grande para que se lea bien` },
+        { titulo: "Colab · Mapa de riesgo académico", desc: "Clasifica estudiantes en alerta roja/amarilla/OK según promedio y asistencia, genera tabla de riesgo y gráfico de dispersión con nombres.", prompt: `Tengo un DataFrame df con columnas: estudiante, promedio, pct_asistencia, participacion, grupo.
+Quiero identificar estudiantes en riesgo académico según estos criterios:
+- ALERTA ROJA: promedio < 60 O asistencia < 60%
+- ALERTA AMARILLA: promedio entre 60-69 O asistencia entre 60-74%
+- OK: el resto
+Crea una nueva columna 'alerta' con estos valores.
+Luego muestra:
+1. Una tabla ordenada de los estudiantes en alerta roja con todas sus métricas
+2. Un gráfico de dispersión con asistencia en el eje X, promedio en el eje Y, coloreado por nivel de alerta, con el nombre de cada estudiante como etiqueta, y líneas de referencia en x=75 e y=60
+
+Variante — ajustar criterios de alerta:
+Cambia los criterios de alerta:
+- ALERTA ROJA: promedio < [tu nota] O asistencia < [tu porcentaje]%
+- ALERTA AMARILLA: promedio entre [rango] O asistencia entre [rango]%
+Actualiza la columna 'alerta' y regenera el gráfico.` },
+        { titulo: "Colab · Exploración libre", desc: "Cuatro análisis opcionales: correlación participación-promedio, boxplot A vs B, tabla de recomendaciones exportable a CSV, y evolución por parciales.", prompt: `¿Hay correlación entre la participación y el promedio final en mi clase?
+Haz un gráfico que lo muestre y calcula el coeficiente de correlación de Pearson.
+Interpreta el resultado en lenguaje no técnico.
+
+Compara el rendimiento promedio del grupo A vs el grupo B.
+Muestra las diferencias en un gráfico de cajas (boxplot) con los valores estadísticos visibles.
+¿La diferencia es significativa?
+
+Genera una tabla resumen con: para cada estudiante, su nombre, promedio, asistencia, participación y una recomendación automática de acción (refuerzo urgente / seguimiento / en buen camino / felicitación).
+Expórtala como archivo CSV descargable desde Colab.
+
+Crea un gráfico de líneas que muestre la evolución de cada estudiante a través de parcial_1, parcial_2 y nota_final.
+Usa colores distintos por grupo (A en azul, B en verde). Que se vea ordenado aunque sean 20 líneas.` },
+        { titulo: "Colab · Corrección de errores y tips", desc: "Prompt para cuando algo falla en Colab: pega el error y el código, y obtén el código corregido completo. Incluye tips de pulido visual y adaptación a datos propios.", prompt: `Tuve este error al ejecutar el código en Google Colab:
+
+[PEGA AQUÍ EL MENSAJE DE ERROR COMPLETO]
+
+El código que ejecuté era:
+
+[PEGA AQUÍ EL CÓDIGO QUE FALLÓ]
+
+¿Cómo lo corrijo? Dame el código corregido completo, no solo el fragmento que cambió.
+
+---
+
+Tips adicionales (úsalos como prompts independientes):
+
+"El gráfico funciona pero el diseño no es profesional. Mejora la tipografía, los colores y el espaciado para que se vea limpio y presentable."
+
+"Explícame este código línea por línea en lenguaje simple, sin tecnicismos."
+
+"Tengo un archivo CSV con estas columnas: [lista tus columnas]. Adapta el código del dashboard para que use mis datos en lugar de los datos de ejemplo."
+
+"Agrega al final del código una celda que exporte todos los gráficos como imágenes PNG y la tabla de riesgo como archivo Excel, todo en una carpeta llamada 'resultados_clase'."` }
+      ]
+    },
+  ],
+
+  links: [
+    {
+      nombre: "Gemini",
+      color: "#6182d9",
+      desc: "Asistente de IA de Google, integrado con Gmail, Drive y Calendar. Ideal para tareas docentes cotidianas y creación de Gems personalizados.",
+      url: "https://gemini.google.com"
+    },
+    {
+      nombre: "NotebookLM",
+      color: "#8f8f78",
+      desc: "IA sobre tus propios documentos. Sube bibliografía y genera síntesis, comparaciones y preguntas de investigación.",
+      url: "https://notebooklm.google.com"
+    },
+    {
+      nombre: "AI Studio",
+      color: "#6182d9",
+      desc: "Plataforma para experimentar con modelos Gemini directamente. Ajusta temperatura, escribe instrucciones de sistema (system prompts) y exporta a Google Colab.",
+      url: "https://aistudio.google.com"
+    },
+    {
+      nombre: "Google Colab",
+      color: "#8f8f78",
+      desc: "Programación en la nube sin instalar nada. Ideal para vibe coding: construir dashboards y análisis con IA como copiloto.",
+      url: "https://colab.research.google.com"
+    },
+    {
+      nombre: "Claude",
+      color: "#1a1a18",
+      desc: "Modelo de Anthropic, útil para escritura compleja, análisis de documentos largos y feedback estructurado a trabajos estudiantiles.",
+      url: "https://claude.ai"
+    }
+  ],
+
+  vision: {
+    blocks: [
+      {
+        tag: "La realidad",
+        text: "Los docentes de Flacso reconocemos que la inteligencia artificial ya forma parte de cómo investigamos, enseñamos y escribimos. Prohibirla no es ni realista ni deseable. La pregunta no es si usarla — sino cómo, con qué criterio, y con conciencia de lo que está en juego."
+      },
+      {
+        tag: "La responsabilidad",
+        text: "Gobernar la IA no se reduce a redactar políticas. Implica comprender quién construye estas herramientas, a qué intereses sirven, y qué riesgos conllevan para la investigación con poblaciones vulnerables. La transparencia no es un extra: es parte del método."
+      },
+      {
+        tag: "El liderazgo",
+        text: "Nuestra ambición no es el cumplimiento mínimo sino el liderazgo. Queremos usar la IA de forma abierta, crítica y sin disculpas — y que ese uso sea en sí mismo una demostración de integridad académica."
+      }
+    ]
+  }
+};
+
+
+function buildLecturaMap() {
+  const map = {};
+  data.lecturas.forEach(group => {
+    group.items.forEach(item => {
+      if (!item.url) return;
+      if (item.autor.includes(',')) {
+        const [last, first] = item.autor.split(',').map(s => s.trim());
+        map[last + ' (' + item.año + ')'] = item.url;
+        if (first) map[first + ' ' + last + ' (' + item.año + ')'] = item.url;
+      } else {
+        const parts = item.autor.split(' ');
+        map[parts[parts.length - 1] + ' (' + item.año + ')'] = item.url;
+      }
+    });
+  });
+  return map;
+}
+const lecturaMap = buildLecturaMap();
+
+function renderSemanas() {
+  const semAssets = {
+    'sem-1': 'assets/service-discovery.png',
+    'sem-2': 'assets/service-development.png',
+    'sem-3': 'assets/service-governance.png',
+    'sem-4': 'assets/service-learning.png',
+  };
+  const semAssetSizes = { 'sem-1': 340, 'sem-2': 340, 'sem-3': 340, 'sem-4': 280 };
+
+  document.getElementById('timeline-container').innerHTML =
+    '<div class="semanas-list">' +
+    data.semanas.map((s, i) => `
+    <section class="semana-section ${s.colorClass}" id="sem-${i}">
+
+      <img class="semana-bg-asset" src="${semAssets[s.colorClass] || ''}" width="${semAssetSizes[s.colorClass] || 340}" height="${semAssetSizes[s.colorClass] || 340}" aria-hidden="true">
+
+      <!-- Toggle header -->
+      <div class="semana-toggle-bar" onclick="toggleSemana(${i})">
+        <div class="semana-toggle-left">
+          <span class="semana-num-tag">Semana ${s.num}</span>
+          <div class="semana-titulo">${s.titulo}</div>
+        </div>
+        <span class="semana-chevron">&#9662;</span>
+      </div>
+
+      <!-- Collapsible content -->
+      <div class="semana-collapsible">
+        <div class="semana-collapsible-inner">
+          <div class="semana-inner">
+
+            <!-- Left: resumen + reflexión -->
+            <div class="semana-left">
+              <p class="semana-resumen">${s.resumen}</p>
+
+              <div class="semana-reflexion">
+                <span class="semana-section-label">Preguntas de reflexión</span>
+                <div class="reflexion-ideas">
+                  ${s.ideas.map(idea => `
+                    <div class="reflexion-idea">
+                      <div class="reflexion-idea-text">«${idea.text}»</div>
+                      <div class="reflexion-idea-src">${idea.src}</div>
+                    </div>
+                  `).join('')}
+                </div>
+                <div class="reflexion-preguntas">
+                  ${s.preguntas.map(p => `<div class="reflexion-pregunta">${p}</div>`).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: temas | actividades + chips -->
+            <div class="semana-right">
+              <div class="semana-cols">
+                <div class="semana-temas">
+                  <span class="semana-section-label">Temas de la sesión</span>
+                  <ul class="semana-list">
+                    ${s.temas.map(t => `<li>${t}</li>`).join('')}
+                  </ul>
+                </div>
+                <div class="semana-actividades">
+                  <span class="semana-section-label">Actividades</span>
+                  <ul class="semana-list">
+                    ${s.actividades.map(a => `<li>${a}</li>`).join('')}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="semana-chips-row">
+                ${s.herramientas.map(h => `<span class="chip chip-tool">${h}</span>`).join('')}
+                ${s.lecturas.map(l => {
+                  const url = lecturaMap[l];
+                  return url
+                    ? `<a href="${url}" target="_blank" rel="noopener" class="chip chip-reading chip-reading-link">${l}</a>`
+                    : `<span class="chip chip-reading">${l}</span>`;
+                }).join('')}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+  `).join('') + '</div>';
+}
+
+function toggleSemana(i) {
+  document.getElementById('sem-' + i).classList.toggle('open');
+}
+
+function renderLecturas() {
+  const lecIntro = `
+    <div class="lec-intro-band">
+      <span class="lec-intro-label">Bibliografía del curso</span>
+      <h2 class="lec-intro-title">Lecturas recomendadas</h2>
+      <p class="lec-intro-desc">Textos seleccionados para cada semana, desde perspectivas técnicas, pedagógicas y críticas sobre la inteligencia artificial.</p>
+    </div>`;
+  const lecAssets = [
+    { src: 'assets/service-discovery.png',  size: 340 },
+    { src: 'assets/service-development.png', size: 340 },
+    { src: 'assets/service-governance.png',  size: 340 },
+    { src: 'assets/service-learning.png',    size: 280 },
+  ];
+
+  document.getElementById('lecturas-container').innerHTML = lecIntro + data.lecturas.map((group, gi) => `
+    <section class="lec-section" id="lec-${gi}" style="--lec-color:${group.color}">
+      <img class="semana-bg-asset" src="${lecAssets[gi] ? lecAssets[gi].src : ''}" width="${lecAssets[gi] ? lecAssets[gi].size : 340}" height="${lecAssets[gi] ? lecAssets[gi].size : 340}" aria-hidden="true">
+      <div class="lec-header" onclick="toggleLectura(${gi})">
+        <div class="lec-toggle-left">
+          <span class="lec-sem-tag">${group.semana}</span>
+          <span class="lec-big-count">${group.items.length} texto${group.items.length !== 1 ? 's' : ''}</span>
+        </div>
+        <span class="lec-chevron">&#9662;</span>
+      </div>
+      <div class="lec-collapsible">
+        <div class="lec-collapsible-inner">
+          <div class="lec-items">
+            ${group.items.map((item, i) => `
+              <div class="lectura-item">
+                <div class="lectura-num">${String(i + 1).padStart(2, '0')}</div>
+                <div>
+                  <div class="lectura-autor">${item.autor} &middot; ${item.año}</div>
+                  <div class="lectura-titulo">
+                    ${item.url
+                      ? `<a href="${item.url}" target="_blank" rel="noopener">${item.titulo}</a>`
+                      : item.titulo}
+                  </div>
+                  <div class="lectura-desc">${item.desc}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+  `).join('');
+}
+
+function toggleLectura(i) {
+  document.getElementById('lec-' + i).classList.toggle('open');
+}
+
+function renderPrompts() {
+  const promptsIntro = `
+    <div class="prompts-intro-band">
+      <span class="prompts-intro-label">Prompts de asistencia</span>
+      <h2 class="prompts-intro-title">Aplicaciones prácticas</h2>
+      <p class="prompts-intro-desc">Prompts listos para usar con Gemini o Claude. Copia el que necesites y reemplaza las partes entre corchetes con tu contexto.</p>
+    </div>`;
+  document.getElementById('prompts-container').innerHTML = promptsIntro + data.prompts.map((p, i) => {
+    if (p.isColab) {
+      return `
+    <div class="prompt-card" id="prompt-card-${i}" style="--prompt-color:${p.color}">
+      <div class="prompt-card-header" onclick="togglePrompt(${i})">
+        <div class="prompt-card-label">${p.label}</div>
+        <div class="prompt-card-title">${p.titulo}</div>
+        <div class="prompt-arrow">▶</div>
+      </div>
+      <div class="prompt-card-body">
+        <p class="prompt-card-desc">${p.desc}</p>
+        ${p.subprompts.map((sub, j) => `
+          <div class="colab-sub" id="colab-sub-${i}-${j}">
+            <div class="colab-sub-header" onclick="event.stopPropagation();toggleColabSub(${i},${j})">
+              <span class="colab-sub-title">${sub.titulo}</span>
+              <span class="colab-sub-arrow">▶</span>
+            </div>
+            <div class="colab-sub-body">
+              <p class="prompt-card-desc" style="margin-bottom:10px">${sub.desc}</p>
+              <div class="prompt-text">${escapeHtml(sub.prompt)}</div>
+              <button class="copy-btn" onclick="copyColabPrompt(${i},${j},this)">
+                <span class="copy-icon">⎘</span> Copiar prompt
+              </button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+    } else {
+      return `
+    <div class="prompt-card" id="prompt-card-${i}" style="--prompt-color:${p.color}">
+      <div class="prompt-card-header" onclick="togglePrompt(${i})">
+        <div class="prompt-card-label">${p.label}</div>
+        <div class="prompt-card-title">${p.titulo}</div>
+        <div class="prompt-arrow">▶</div>
+      </div>
+      <div class="prompt-card-body">
+        <p class="prompt-card-desc">${p.desc}</p>
+        <div class="prompt-text">${escapeHtml(p.prompt)}</div>
+        <button class="copy-btn" onclick="copyPrompt(${i},this)">
+          <span class="copy-icon">⎘</span> Copiar prompt
+        </button>
+      </div>
+    </div>`;
+    }
+  }).join('');
+}
+
+
+function toggleColabSub(i, j) {
+  document.getElementById('colab-sub-' + i + '-' + j).classList.toggle('open');
+}
+
+function copyColabPrompt(i, j, btn) {
+  const text = data.prompts[i].subprompts[j].prompt;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<span class="copy-icon">✓</span> Copiado';
+    btn.style.background = '#e8f5f0';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 1800);
+  });
+}
+
+function togglePrompt(i) {
+  document.getElementById('prompt-card-' + i).classList.toggle('open');
+}
+
+function renderLinks() {
+  document.getElementById('links-container').innerHTML = `
+    <div class="links-section">
+      <div class="lec-intro-band">
+        <span class="lec-intro-label">Herramientas del curso</span>
+        <h2 class="lec-intro-title">Links y recursos</h2>
+        <p class="lec-intro-desc">Plataformas y herramientas de IA exploradas durante el programa.</p>
+      </div>
+      <div class="links-body">
+        <img class="links-asset" src="assets/service-learning.png" width="400" height="400" aria-hidden="true">
+        <div class="links-grid">
+          ${data.links.map(l => `
+            <div class="link-card" style="border-top-color:${l.color}">
+              <div class="link-name">${l.nombre}</div>
+              <div class="link-desc">${l.desc}</div>
+              <a href="${l.url}" target="_blank" rel="noopener" class="link-btn" style="color:${l.color}">→ Abrir</a>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function copyPrompt(i, btn) {
+  navigator.clipboard.writeText(data.prompts[i].prompt).then(() => {
+    btn.innerHTML = '<span class="copy-icon">✓</span> Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="copy-icon">⎘</span> Copiar prompt';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderVision() {
+  const v = data.vision;
+  document.getElementById('vision-statement-container').innerHTML = `
+    <div class="lec-intro-band">
+      <span class="lec-intro-label">Posicionamiento colectivo · Docentes Flacso 2026</span>
+      <h2 class="lec-intro-title">Nuestra visión sobre la IA</h2>
+      <p class="lec-intro-desc">No una política de cumplimiento. Una postura construida en colectivo al cierre del programa.</p>
+    </div>
+    ${v.blocks.map((b, i) => `
+      <div class="vision-block vision-block--${i + 1}">
+        <div class="vision-block-inner">
+          <span class="vision-block-tag">${b.tag}</span>
+          <p class="vision-block-text">${b.text}</p>
+        </div>
+      </div>
+    `).join('')}
+  `;
+}
+
+function copyGuiaPrompt(btn) {
+  const text = btn.closest('.guia-prompt-block').querySelector('.guia-prompt-text').textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.innerHTML = '<span class="copy-icon">✓</span> Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="copy-icon">⎘</span> Copiar prompt';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+renderSemanas();
+renderLecturas();
+renderPrompts();
+renderLinks();
+renderVision();
+</script>
+</body>
+</html>
