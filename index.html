@@ -1797,34 +1797,40 @@ const data = {
       color: "#8f8f78",
       items: [
         {
-          autor: "O'Neil, Cathy", año: "2016",
-          titulo: "Weapons of Math Destruction",
-          url: "https://www.penguinrandomhouse.com/books/241363/weapons-of-math-destruction-by-cathy-oneil/",
-          desc: "Los tres rasgos que convierten un modelo en un arma de destrucción matemática: opacidad, escala y daño."
+          autor: "Luccioni, A. et al.", año: "2024",
+          titulo: "Power Hungry Processing: Watts Driving the Cost of AI Deployment?",
+          url: "https://dl.acm.org/doi/10.1145/3630106.3658542",
+          desc: "Comparación empírica del costo energético y de carbono por tipo de tarea de IA: generar imágenes emite ~600 veces más CO₂ que clasificar texto."
         },
         {
-          autor: "Birhane, Abeba", año: "2021",
-          titulo: "Algorithmic Injustice: A Relational Ethics Approach",
-          url: "https://doi.org/10.1016/j.patter.2021.100205",
-          desc: "Los enfoques técnicos son insuficientes porque ignoran estructuras de poder. Se requiere una ética relacional centrada en las comunidades afectadas."
+          autor: "Richardson, K. et al.", año: "2023",
+          titulo: "Earth beyond six of nine planetary boundaries",
+          url: "https://doi.org/10.1126/sciadv.adh2458",
+          desc: "6 de 9 límites planetarios ya cruzados. Marco de referencia para entender la presión que la expansión de la IA ejerce sobre el sistema Tierra."
         },
         {
-          autor: "Benjamin, Ruha", año: "2019",
-          titulo: "Race After Technology: The New Jim Code",
-          url: "https://www.ruhabenjamin.com/race-after-technology",
-          desc: "La automatización puede ocultar y profundizar la discriminación mientras aparece neutral — el Nuevo Código Jim."
+          autor: "Strubell, E. et al.", año: "2020",
+          titulo: "Energy and Policy Considerations for Modern Deep Learning Research",
+          url: "https://ojs.aaai.org/index.php/AAAI/article/view/7123",
+          desc: "Entrenar un solo modelo grande puede emitir tanto CO₂ como cientos de vuelos transatlánticos. Primer análisis sistemático del costo energético del aprendizaje profundo."
         },
         {
-          autor: "Acemoglu, Daron", año: "2024",
-          titulo: "Simple Macroeconomics of AI",
-          url: "https://doi.org/10.3386/w32487",
-          desc: "Las promesas macroeconómicas de la IA están sobrestimadas. Las ganancias se concentran en el capital; los trabajadores de tareas rutinarias pierden ingresos."
+          autor: "Li, P. et al.", año: "2023",
+          titulo: "Making AI Less 'Thirsty': Uncovering and Addressing the Secret Water Footprint of AI Models",
+          url: "https://arxiv.org/abs/2304.03271",
+          desc: "Entrenar GPT-3 consumió ~700.000 litros de agua. Metodología para medir la huella hídrica en los Alcances 1 y 2 de los centros de datos."
         },
         {
-          autor: "Miceli, M. & Posada, J.", año: "2022",
-          titulo: "The Data-Production Dispositif",
-          url: "https://doi.org/10.1145/3492853",
-          desc: "La IA depende del trabajo manual, invisible y precarizado de millones de personas en el Sur Global. ¿Quién etiquetó los datos de tu herramienta?"
+          autor: "Wang, B. et al.", año: "2024",
+          titulo: "E-waste challenges of generative artificial intelligence",
+          url: "https://doi.org/10.1038/s43588-024-00712-6",
+          desc: "Entre 2020 y 2030 podrían acumularse 1,2–5 millones de toneladas de e-waste relacionado con IA: GPU, servidores y chips obsoletos."
+        },
+        {
+          autor: "Bérard, Hugo (Mila)", año: "2024",
+          titulo: "Sustainable AI — módulo TRAIL",
+          url: "https://trail.gi-ziegler.com/",
+          desc: "Módulo completo sobre IA sostenible del programa TRAIL (Mila). Base conceptual de la sesión: ciclo de vida, medición, reducción y gobernanza."
         }
       ]
     }
@@ -2190,15 +2196,6 @@ function renderSemanas() {
                 </div>
               </div>
 
-              <div class="semana-chips-row">
-                ${s.herramientas.map(h => `<span class="chip chip-tool">${h}</span>`).join('')}
-                ${s.lecturas.map(l => {
-                  const url = lecturaMap[l];
-                  return url
-                    ? `<a href="${url}" target="_blank" rel="noopener" class="chip chip-reading chip-reading-link">${l}</a>`
-                    : `<span class="chip chip-reading">${l}</span>`;
-                }).join('')}
-              </div>
             </div>
 
           </div>
