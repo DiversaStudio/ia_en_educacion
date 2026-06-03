@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · IA para la Docencia</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2ec;
+  --surface:#ffffff;
+  --black:#1a1a18;
+  --red:#c84b2f;
+  --green:#2d5a3d;
+  --blue:#185fa5;
+  --muted:#7a7872;
+  --border:#dedad2;
+  --surface2:#ede9e1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Instrument Sans',sans-serif;color:var(--black);min-height:100vh}
+
+header{background:var(--black);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#888}
+.header-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--bg);font-style:italic}
+.header-meta{font-family:'DM Mono',monospace;font-size:10px;color:#555;letter-spacing:.1em}
+
+.container{max-width:1100px;margin:0 auto;padding:40px 48px}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px}
+.stat-card{background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:18px 20px}
+.stat-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.stat-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--black);line-height:1}
+.stat-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.stat-bar{height:3px;background:var(--border);border-radius:2px;margin-top:10px;overflow:hidden}
+.stat-fill{height:100%;border-radius:2px;transition:width .8s ease}
+
+.filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.filter-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;padding:7px 16px;border-radius:20px;border:0.5px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s}
+.filter-btn:hover{border-color:var(--black);color:var(--black)}
+.filter-btn.active{background:var(--black);color:var(--bg);border-color:var(--black)}
+
+.semanas{display:flex;flex-direction:column;gap:3px}
+.semana-block{background:var(--surface);border:0.5px solid var(--border);border-radius:8px;overflow:hidden;transition:all .2s}
+.semana-header{display:flex;align-items:center;gap:16px;padding:16px 20px;cursor:pointer;user-select:none}
+.semana-header:hover{background:var(--surface2)}
+.semana-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--red);min-width:60px}
+.semana-titulo{font-family:'DM Serif Display',serif;font-size:17px;font-style:italic;flex:1}
+.semana-chips{display:flex;gap:6px}
+.chip{font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px}
+.chip-lectura{background:#e8eef8;color:#0c447c}
+.chip-actividad{background:#e8f5f0;color:#085041}
+.chip-video{background:#faeeda;color:#633806}
+.chip-estado{margin-left:auto}
+.chip-listo{background:#e8f5f0;color:#085041}
+.chip-proceso{background:#faeeda;color:#633806}
+.chip-pendiente{background:#f1efe8;color:var(--muted)}
+.semana-arrow{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);transition:transform .2s;margin-left:8px}
+.semana-block.open .semana-arrow{transform:rotate(90deg)}
+
+.semana-body{display:none;padding:0 20px 20px;border-top:0.5px solid var(--border)}
+.semana-block.open .semana-body{display:block}
+
+.items-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.item-card{border:0.5px solid var(--border);border-radius:6px;padding:14px 16px;position:relative}
+.item-type{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.item-type.lectura{color:#0c447c}
+.item-type.actividad{color:#085041}
+.item-type.video{color:#633806}
+.item-titulo{font-size:14px;font-weight:500;color:var(--black);margin-bottom:4px;line-height:1.4}
+.item-autor{font-size:12px;color:var(--muted)}
+.item-desc{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5;border-top:0.5px solid var(--border);padding-top:8px}
+.item-tags{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.tag{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--surface2);color:var(--muted)}
+.item-estado{position:absolute;top:12px;right:12px;width:8px;height:8px;border-radius:50%}
+.estado-listo{background:#2d5a3d}
+.estado-proceso{background:#e8a020}
+.estado-pendiente{background:var(--border)}
+
+.semana-objetivo{font-size:13px;color:var(--muted);line-height:1.6;padding:12px 0 0;font-style:italic;border-top:0.5px solid var(--border);margin-top:14px}
+.semana-objetivo strong{color:var(--black);font-style:normal;font-weight:500}
+
+.empty{text-align:center;padding:48px 0;color:var(--muted);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em}
+
+footer{text-align:center;padding:32px 48px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.12em;border-top:0.5px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Diversa Studio</div>
+  <div class="header-title">IA para la Docencia — Material de Clase</div>
+  <div class="header-meta">16 semanas · 2025</div>
+</header>
+
+<div class="container">
+
+  <div class="stats-row" id="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Total de items</div>
+      <div class="stat-num" id="stat-total">0</div>
+      <div class="stat-sub">materiales cargados</div>
+      <div class="stat-bar"><div class="stat-fill" id="bar-total" style="background:var(--black);width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Lecturas</div>
+      <div class="stat-num" id="stat-lecturas" style="color:var(--blue)">0</div>
+      <div class="stat-sub">textos y artículos</div>
+      <div class="stat-bar"><div class="stat-fill" id="bar-lecturas" style="background:var(--blue);width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Actividades</div>
+      <div class="stat-num" id="stat-actividades" style="color:var(--green)">0</div>
+      <div class="stat-sub">ejercicios y guías</div>
+      <div class="stat-bar"><div class="stat-fill" id="bar-actividades" style="background:var(--green);width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Completado</div>
+      <div class="stat-num" id="stat-listo" style="color:var(--red)">0%</div>
+      <div class="stat-sub">semanas listas</div>
+      <div class="stat-bar"><div class="stat-fill" id="bar-listo" style="background:var(--red);width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filtrar('todo',this)">Todo</button>
+    <button class="filter-btn" onclick="filtrar('lectura',this)">Solo lecturas</button>
+    <button class="filter-btn" onclick="filtrar('actividad',this)">Solo actividades</button>
+    <button class="filter-btn" onclick="filtrar('video',this)">Videos</button>
+    <button class="filter-btn" onclick="filtrar('listo',this)">Listos</button>
+    <button class="filter-btn" onclick="filtrar('proceso',this)">En proceso</button>
+    <button class="filter-btn" onclick="filtrar('pendiente',this)">Pendientes</button>
+  </div>
+
+  <div class="semanas" id="semanas-container"></div>
+  <div class="empty" id="empty-msg" style="display:none">No hay materiales que coincidan con este filtro.</div>
+
+</div>
+
+<footer>Dashboard generado con IA · Diversa Studio · 2025</footer>
+
+<script>
+const semanas = [
+  {
+    num:1, titulo:"Introducción: ¿qué es la IA generativa?", estado:"listo",
+    objetivo:"Que los participantes puedan distinguir entre IA generativa y otras formas de IA, y articular qué la hace diferente pedagógicamente.",
+    items:[
+      {tipo:"lectura",titulo:"The Age of AI Has Begun",autor:"Bill Gates, Gates Notes (2023)",desc:"Texto de entrada accesible sobre el impacto de la IA generativa. Ideal para abrir el debate sin tecnicismos.",tags:["introductorio","impacto social"],estado:"listo"},
+      {tipo:"lectura",titulo:"GPT-4 Technical Report (resumen ejecutivo)",autor:"OpenAI (2023)",desc:"Solo las 3 primeras páginas. Para que vean cómo los propios desarrolladores describen las capacidades y limitaciones.",tags:["técnico","limitaciones"],estado:"listo"},
+      {tipo:"actividad",titulo:"Diagnóstico: ¿qué saben y qué creen?",autor:"Actividad de apertura — 30 min",desc:"Encuesta anónima + discusión grupal. ¿Usan IA ya? ¿Para qué? ¿Qué les genera entusiasmo o incomodidad?",tags:["diagnóstico","participación"],estado:"listo"},
+      {tipo:"video",titulo:"How Large Language Models Work",autor:"3Blue1Brown — YouTube (27 min)",desc:"Explicación visual de cómo funcionan los LLMs. Sin código, con intuición geométrica. Ver antes de clase.",tags:["conceptual","visual"],estado:"listo"},
+    ]
+  },
+  {
+    num:2, titulo:"Perspectiva utilitaria: IA como herramienta docente", estado:"listo",
+    objetivo:"Identificar al menos 3 usos concretos de IA generativa en la propia práctica docente y evaluar su pertinencia.",
+    items:[
+      {tipo:"lectura",titulo:"Artificial Intelligence and the Future of Teaching and Learning",autor:"U.S. Dept. of Education (2023) — Cap. 1 y 3",desc:"Marco institucional sobre oportunidades y riesgos de la IA en educación. Base para discutir política educativa.",tags:["política","educación"],estado:"listo"},
+      {tipo:"actividad",titulo:"Mapeo de tareas docentes: ¿qué puede hacer la IA?",autor:"Ejercicio individual — 45 min",desc:"Cada participante lista sus 10 tareas docentes más frecuentes y clasifica cuáles podría apoyar la IA, cuáles no, y por qué.",tags:["reflexión","práctica"],estado:"listo"},
+      {tipo:"actividad",titulo:"Primer contacto: Gemini en Docs",autor:"Demo guiada — 30 min",desc:"Abrir Gemini en Google Docs y pedirle que genere una primera versión de una guía de lectura para su materia.",tags:["hands-on","Gemini"],estado:"listo"},
+    ]
+  },
+  {
+    num:3, titulo:"Gemini y el ecosistema Google", estado:"listo",
+    objetivo:"Usar Gemini con @menciones y configurar un Gem básico para una tarea docente específica.",
+    items:[
+      {tipo:"actividad",titulo:"Tour por Gemini: @Gmail, @Drive, @Calendar",autor:"Demo en vivo — 40 min",desc:"Cada participante prueba las 3 integraciones con sus datos reales. ¿Qué les da acceso Gemini que antes no tenían?",tags:["hands-on","Gemini"],estado:"listo"},
+      {tipo:"actividad",titulo:"Crear tu primer Gem",autor:"Taller individual — 45 min",desc:"Configurar un Gem con instrucciones para su materia específica. Compartirlo con un compañero y probar si funciona.",tags:["Gems","personalización"],estado:"listo"},
+      {tipo:"lectura",titulo:"Prompt Engineering Guide — Sección: Few-shot prompting",autor:"promptingguide.ai",desc:"Solo la sección de few-shot. Para entender por qué dar ejemplos en el prompt mejora los resultados.",tags:["prompts","técnica"],estado:"listo"},
+    ]
+  },
+  {
+    num:4, titulo:"NotebookLM: IA sobre tus propios documentos", estado:"proceso",
+    objetivo:"Cargar la bibliografía central de su materia en NotebookLM y extraer síntesis, preguntas y comparaciones entre autores.",
+    items:[
+      {tipo:"actividad",titulo:"NotebookLM hands-on: cargar tu bibliografía",autor:"Taller individual — 60 min",desc:"Cada participante sube 3-5 textos de su materia. Debe hacer al menos: 1 síntesis, 1 comparación entre autores, 1 pregunta de investigación.",tags:["NotebookLM","bibliografía"],estado:"proceso"},
+      {tipo:"actividad",titulo:"Audio Overview: escuchar tu material",autor:"Exploración individual — 20 min",desc:"Generar un Audio Overview de los documentos cargados. Reflexión: ¿es útil para los estudiantes? ¿Para qué casos?",tags:["NotebookLM","audio"],estado:"proceso"},
+      {tipo:"lectura",titulo:"RAG: Retrieval-Augmented Generation explicado",autor:"Blog de Google DeepMind — versión divulgativa",desc:"Para entender por qué NotebookLM no inventa: cómo funciona RAG en términos simples.",tags:["conceptual","técnica"],estado:"pendiente"},
+    ]
+  },
+  {
+    num:5, titulo:"Claude y la escritura compleja", estado:"proceso",
+    objetivo:"Usar Claude Projects para crear un asistente persistente de su materia y generar feedback estructurado a trabajos estudiantiles.",
+    items:[
+      {tipo:"actividad",titulo:"Configurar un Claude Project",autor:"Taller guiado — 45 min",desc:"Crear un Project con: instrucciones de rol, syllabus subido, rúbrica de evaluación. Probar con 3 preguntas reales del trabajo cotidiano.",tags:["Claude","Projects"],estado:"proceso"},
+      {tipo:"actividad",titulo:"Feedback asistido por IA: 5 casos",autor:"Ejercicio individual — 50 min",desc:"Cada participante selecciona 5 fragmentos de trabajos de estudiantes reales (anonimizados) y genera feedback con Claude. Compara con su propio feedback previo.",tags:["feedback","evaluación"],estado:"pendiente"},
+      {tipo:"lectura",titulo:"On the Dangers of Stochastic Parrots",autor:"Bender et al. (2021) — Secciones 5 y 6",desc:"Para introducir la mirada crítica: qué limitaciones estructurales tienen los LLMs. Lectura densa, discutir en clase.",tags:["crítico","limitaciones"],estado:"pendiente"},
+    ]
+  },
+  {
+    num:6, titulo:"Google Workspace Studio y vibe coding", estado:"pendiente",
+    objetivo:"Diseñar, probar y exportar un prompt en Google Workspace Studio y conectarlo con Google Colab para un análisis de datos de la clase.",
+    items:[
+      {tipo:"actividad",titulo:"Google Workspace Studio: primer demo",autor:"Demo guiada — 30 min",desc:"Tour por las interfaces: Chat, Structured, Build. Ajustar temperatura y ver el efecto en las respuestas.",tags:["Google Workspace Studio","demo"],estado:"pendiente"},
+      {tipo:"actividad",titulo:"Vibe coding en Colab: dashboard de tu clase",autor:"Taller individual — 90 min",desc:"Ejercicio completo de vibe coding: construir un dashboard visual de datos de la clase sin saber programar, usando Gemini como co-piloto.",tags:["Colab","vibe coding","datos"],estado:"pendiente"},
+      {tipo:"lectura",titulo:"What is vibe coding and why does it matter?",autor:"Simon Willison (2025) — simonwillison.net",desc:"Reflexión del creador del término. Para entender el concepto antes del ejercicio práctico.",tags:["vibe coding","conceptual"],estado:"pendiente"},
+    ]
+  },
+  {
+    num:7, titulo:"Marco SAMR: niveles de integración", estado:"pendiente",
+    objetivo:"Ubicar los usos de IA desarrollados hasta ahora en el marco SAMR y argumentar cómo podrían subir un nivel.",
+    items:[
+      {tipo:"lectura",titulo:"SAMR Model Explained",autor:"Ruben Puentedura — Texto original + slides",desc:"El marco original. Leer antes de clase, llegar con un ejemplo propio ubicado en uno de los 4 niveles.",tags:["SAMR","marco pedagógico"],estado:"pendiente"},
+      {tipo:"actividad",titulo:"Análisis SAMR de mis usos de IA",autor:"Reflexión individual + discusión — 45 min",desc:"Cada participante ubica los 3 usos de IA que más usa en SAMR. ¿Cuáles son S y A? ¿Hay alguno M o R? ¿Qué lo haría subir de nivel?",tags:["SAMR","reflexión"],estado:"pendiente"},
+      {tipo:"actividad",titulo:"Panel: un uso que llegó a R",autor:"Presentaciones — 30 min",desc:"3 voluntarios presentan un caso que consideran Redefinición y el grupo debate si coincide.",tags:["SAMR","debate"],estado:"pendiente"},
+    ]
+  },
+  {
+    num:8, titulo:"Producto final: presentación de casos", estado:"pendiente",
+    objetivo:"Defender un producto concreto desarrollado durante el curso: demo en vivo, análisis de valor y ubicación en SAMR.",
+    items:[
+      {tipo:"actividad",titulo:"Presentaciones individuales — Producto final",autor:"5–7 min por participante",desc:"Demo en vivo del producto + defensa: problema, herramienta elegida, análisis de valor (+/=/−), nivel SAMR, prompts usados.",tags:["producto final","defensa"],estado:"pendiente"},
+      {tipo:"actividad",titulo:"Rúbrica de evaluación entre pares",autor:"Evaluación colectiva",desc:"Cada participante evalúa 2 presentaciones usando la rúbrica del curso. Feedback escrito y verbal.",tags:["evaluación","rúbrica"],estado:"pendiente"},
+    ]
+  },
+];
+
+function renderEstado(e){
+  const map={listo:'chip-listo',proceso:'chip-proceso',pendiente:'chip-pendiente'};
+  const label={listo:'Listo',proceso:'En proceso',pendiente:'Pendiente'};
+  return `<span class="chip chip-estado ${map[e]}">${label[e]}</span>`;
+}
+function renderTipoChip(t){
+  const map={lectura:'chip-lectura',actividad:'chip-actividad',video:'chip-video'};
+  const label={lectura:'Lectura',actividad:'Actividad',video:'Video'};
+  return `<span class="chip ${map[t]}">${label[t]}</span>`;
+}
+function dotEstado(e){
+  return `<div class="item-estado estado-${e}"></div>`;
+}
+
+function renderSemana(s, filtro){
+  const itemsFiltrados = filtro==='todo' ? s.items :
+    ['lectura','actividad','video'].includes(filtro) ? s.items.filter(i=>i.tipo===filtro) :
+    s.items.filter(i=>i.estado===filtro);
+
+  if(['lectura','actividad','video','listo','proceso','pendiente'].includes(filtro) && itemsFiltrados.length===0) return '';
+
+  const tiposPresentes = [...new Set(s.items.map(i=>i.tipo))];
+
+  return `
+  <div class="semana-block" id="sem-${s.num}">
+    <div class="semana-header" onclick="toggleSemana(${s.num})">
+      <span class="semana-num">SEMANA ${String(s.num).padStart(2,'0')}</span>
+      <span class="semana-titulo">${s.titulo}</span>
+      <div class="semana-chips">
+        ${tiposPresentes.map(t=>renderTipoChip(t)).join('')}
+        ${renderEstado(s.estado)}
+      </div>
+      <span class="semana-arrow">▶</span>
+    </div>
+    <div class="semana-body">
+      <div class="items-grid">
+        ${itemsFiltrados.map(item=>`
+        <div class="item-card">
+          ${dotEstado(item.estado)}
+          <div class="item-type ${item.tipo}">${item.tipo.toUpperCase()}</div>
+          <div class="item-titulo">${item.titulo}</div>
+          <div class="item-autor">${item.autor}</div>
+          <div class="item-desc">${item.desc}</div>
+          <div class="item-tags">${item.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        </div>`).join('')}
+      </div>
+      <div class="semana-objetivo"><strong>Objetivo de la semana:</strong> ${s.objetivo}</div>
+    </div>
+  </div>`;
+}
+
+function toggleSemana(n){
+  const el = document.getElementById('sem-'+n);
+  el.classList.toggle('open');
+}
+
+function filtrar(tipo, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const container = document.getElementById('semanas-container');
+  container.innerHTML = semanas.map(s=>renderSemana(s,tipo)).join('');
+  const empty = document.getElementById('empty-msg');
+  empty.style.display = container.innerHTML.trim()==='' ? 'block' : 'none';
+}
+
+function calcStats(){
+  let total=0, lecturas=0, actividades=0, listos=0;
+  semanas.forEach(s=>{
+    total+=s.items.length;
+    lecturas+=s.items.filter(i=>i.tipo==='lectura').length;
+    actividades+=s.items.filter(i=>i.tipo==='actividad').length;
+    if(s.estado==='listo') listos++;
+  });
+  const pctListo = Math.round(listos/semanas.length*100);
+  document.getElementById('stat-total').textContent=total;
+  document.getElementById('stat-lecturas').textContent=lecturas;
+  document.getElementById('stat-actividades').textContent=actividades;
+  document.getElementById('stat-listo').textContent=pctListo+'%';
+  setTimeout(()=>{
+    document.getElementById('bar-total').style.width='100%';
+    document.getElementById('bar-lecturas').style.width=(lecturas/total*100)+'%';
+    document.getElementById('bar-actividades').style.width=(actividades/total*100)+'%';
+    document.getElementById('bar-listo').style.width=pctListo+'%';
+  },200);
+}
+
+calcStats();
+filtrar('todo', document.querySelector('.filter-btn.active'));
+</script>
+</body>
+</html>
