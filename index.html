@@ -969,9 +969,9 @@ a.chip-reading-link:hover {
   position: relative;
   overflow: hidden;
 }
-.vision-block--1 { background: var(--cielo); }
+.vision-block--1 { background: var(--cielo); border-bottom: none; }
 .vision-block--2 { background: var(--hongo); }
-.vision-block--3 { background: var(--negro); }
+.vision-block--3 { background: var(--negro); border-bottom: none; }
 
 .vision-block-inner {
   max-width: 820px;
@@ -1793,7 +1793,7 @@ const data = {
         "¿Qué medirías para conocer la huella de carbono de los modelos que usas en tu curso? ¿Qué cambiarías si pudieras medirlo?"
       ],
       herramientas: ["Google Workspace Studio", "Code Carbon"],
-      lecturas: ["Luccioni et al. (FAccT 2024)", "Richardson et al. (2023)", "Strubell et al. (AAAI 2020)", "Li et al. (2023)", "Wang et al., Nature (2024)"]
+      lecturas: ["Luccioni et al. (FAccT 2024)", "Richardson et al. (2023)", "Strubell et al. (AAAI 2020)", "Li et al. (2023)", "Wang et al. (2024)"]
     }
   ],
 
@@ -1904,12 +1904,6 @@ const data = {
           url: "https://doi.org/10.1038/s43588-024-00712-6",
           desc: "Entre 2020 y 2030 podrían acumularse 1,2–5 millones de toneladas de e-waste relacionado con IA: GPU, servidores y chips obsoletos."
         },
-        {
-          autor: "Bérard, Hugo (Mila)", año: "2024",
-          titulo: "Sustainable AI — módulo TRAIL",
-          url: "https://education.mila.quebec/course/sustainableai",
-          desc: "Módulo completo sobre IA sostenible del programa TRAIL (Mila). Base conceptual de la sesión: ciclo de vida, medición, reducción y gobernanza."
-        }
       ]
     }
   ],
@@ -2181,7 +2175,7 @@ Tips adicionales (úsalos como prompts independientes):
       },
       {
         tag: "El liderazgo",
-        text: "Nuestra ambición no es el cumplimiento mínimo sino el liderazgo. Queremos usar la IA de forma abierta, crítica y sin disculpas — y que ese uso sea en sí mismo una demostración de integridad académica."
+        text: "Nuestra ambición no es el cumplimiento mínimo sino el liderazgo. Queremos usar la IA de forma abierta, crítica y sin chulpa — y que ese uso sea en sí mismo una demostración de integridad académica."
       }
     ]
   }
@@ -2272,6 +2266,11 @@ function renderSemanas() {
                     ${s.actividades.map(a => `<li>${a}</li>`).join('')}
                   </ul>
                 </div>
+              </div>
+
+              <div class="semana-chips-row">
+                ${s.herramientas.map(h => `<span class="chip chip-tool">${h}</span>`).join('')}
+                ${s.lecturas.map(l => { const url = lecturaMap[l]; return url ? `<a href="${url}" target="_blank" rel="noopener" class="chip chip-reading chip-reading-link" style="color:inherit">${l}</a>` : `<span class="chip chip-reading">${l}</span>`; }).join('')}
               </div>
 
             </div>
